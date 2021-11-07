@@ -49,12 +49,18 @@
 		//Close the connection. Don't forget to do it, otherwise you're keeping the resources of the server allocated.
 		con.close();
 
-		out.print("Login succeeded!");
 		
 	} catch (Exception ex) {
 		out.print(ex);
 		out.print("Login failed :()");
 	}
 %>
+
+<br>
+
+<form method="get" action="HelloWorld.jsp">
+	<input type="submit" value="Logout">
+</form>
+
 </body>
 </html>
