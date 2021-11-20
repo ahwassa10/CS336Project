@@ -1,6 +1,7 @@
 #Mark completed tasks with x
 
 User functionality
+Nikola
 
 [] let people search for flights between two airports
 	[] one way on a specific date
@@ -10,6 +11,7 @@ User functionality
 [] sort flights by different criteria (price, take-off time, landing time, duration of flight)
 [] filter the list of flights by various criteria (price, number of stops, airline, take-off time, landing time)
 
+Paul
 [] Browse questions and answers
 [] Search questions and answers by keywords
 [] make flight reservations/buy the ticket.
@@ -21,6 +23,7 @@ User functionality
 [] post questions to the customer representative
 
 Admin
+Aromal
 
 [] Add, Edit information and Delete a customer representative or customer
 [] Obtain a sales report for a particular month
@@ -31,6 +34,7 @@ Admin
 
 
 Customer Representative
+Anthony
 
 [] Make flight reservations on behalf of users
 [] Edit flight reservations for a customer
