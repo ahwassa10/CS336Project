@@ -8,10 +8,14 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Travel Scott</title>
+		<title>Admin Console</title>
 	</head>
 	
 	<body>
+		<h1>
+			Admin Console
+		</h1>
+
 <!--
 		Hello World1 <!__ the usual HTML way __>
 		<% out.println("Hello World2"); %> <!__ output the same thing, but using 
@@ -53,7 +57,7 @@
 	<br>
 	
 	
-	Alternatively, lets type in a new user, password (will always be a customer).
+	If you're a new customer, create an account:
 	<br>
 		<form method="post" action="addUser.jsp">
 		<table>
@@ -62,6 +66,12 @@
 		</tr>
 		<tr>
 		<td>Password</td><td><input type="text" name="newPassword"></td>
+		</tr>
+		<tr>
+		<td>First Name</td><td><input type="text" name="newFName"></td>
+		</tr>
+		<tr>
+		<td>Last Name</td><td><input type="text" name="newLName"></td>
 		</tr>
 		</table>
 		<input type="submit" value="Register">

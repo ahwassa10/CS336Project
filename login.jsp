@@ -20,27 +20,27 @@
 		//Create a SQL statement
 		Statement stmt = con.createStatement();
 
-		//Get parameters from the HTML form at the HelloWorld.jsp
+		//Get parameters from the HTML form at the Homepage.jsp
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-//		float price = Float.valueOf(request.getParameter("price"));
 
 
-		//Make an insert statement for the Sells table:
-		String insert = "SELECT * FROM user "
+		//Make a select query for user
+		String select = "SELECT * FROM user "
 				+ "WHERE username=? and password=?";
 		//Create a Prepared SQL statement allowing you to introduce the parameters of the query
-		PreparedStatement ps = con.prepareStatement(insert);
+		PreparedStatement ps = con.prepareStatement(select);
 
 		//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
 		ps.setString(1, username);
 		ps.setString(2, password);
-//		ps.setFloat(3, price);
 		//Run the query against the DB
 		ResultSet result = ps.executeQuery();
+		String type = "customer";
 		if (result.next()){
 			out.println("Valid login, welcome "+result.getString("first_name")+" "+result.getString("last_name")+".<br>");
 			out.println("You are a "+result.getString("type")+".<br>");
+			type = result.getString("type");
 		}
 		else {
 			out.println("Bad login<br>");
@@ -48,7 +48,10 @@
 
 		//Close the connection. Don't forget to do it, otherwise you're keeping the resources of the server allocated.
 		con.close();
-
+		
+		if (type.equals("admin")) {
+			response.sendRedirect("admin/adminConsole.jsp");
+		}
 		
 	} catch (Exception ex) {
 		out.print(ex);
@@ -58,7 +61,7 @@
 
 <br>
 
-<form method="get" action="HelloWorld.jsp">
+<form method="get" action="Homepage.jsp">
 	<input type="submit" value="Logout">
 </form>
 

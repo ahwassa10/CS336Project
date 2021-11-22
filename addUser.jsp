@@ -20,22 +20,24 @@
 		//Create a SQL statement
 		Statement stmt = con.createStatement();
 
-		//Get parameters from the HTML form at the HelloWorld.jsp
+		//Get parameters from the HTML form at the Homepage.jsp
 		String newUsername = request.getParameter("newUsername");
 		String newPassword = request.getParameter("newPassword");
-//		float price = Float.valueOf(request.getParameter("price"));
+		String newFName = request.getParameter("newFName");
+		String newLName = request.getParameter("newLName");
 
 
-		//Make an insert statement for the Sells table:
-		String insert = "INSERT INTO user(username, password)"
-				+ "VALUES (?, ?)";
+		//Make an insert statement for the user table:
+		String insert = "INSERT INTO user"
+				+ "VALUES (?, ?, ?, ?)";
 		//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 		PreparedStatement ps = con.prepareStatement(insert);
 
 		//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
 		ps.setString(1, newUsername);
 		ps.setString(2, newPassword);
-//		ps.setFloat(3, price);
+		ps.setString(3, newFName);
+		ps.setString(4, newLName);
 		//Run the query against the DB
 		ps.executeUpdate();
 
@@ -49,5 +51,11 @@
 		out.print("Insert failed :()");
 	}
 %>
+<br>
+
+<form method="get" action="Homepage.jsp">
+    <input type="submit" value="Logout">
+</form>
+
 </body>
 </html>
