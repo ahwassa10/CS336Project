@@ -37,7 +37,7 @@ Sort By:
 
 	<br>
  	<input type="text" name="final_arrival_airport_id" placeholder="Arrival Airport" > 
-	<input type="date" name="arrival_date" placeholder="Returning Date"> 
+	<input type="date" name="arrival_date" placeholder="Arrival Date"> 
 	<br>
 	
 	<form action="SearchResults.jsp">
