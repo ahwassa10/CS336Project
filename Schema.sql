@@ -103,11 +103,17 @@ CREATE TABLE ticket (ticket_id                      varchar(10) NOT NULL,
                      purchase_time                  TIME,
                      total_fare                     int,
                      cancellation_fee               int,
+                     flight_duration                time,
+                     arrival_time                   time,
+                     arrival_date                   date,
+                     number_of_stop                 int,
+                     airline_id                     varchar(10),
                      PRIMARY KEY (ticket_id,
                                   initial_departure_airport_id,
                                   final_arrival_airport_id),
                      FOREIGN KEY (initial_departure_airport_id) REFERENCES airport(airport_id),
-                     FOREIGN KEY (final_arrival_airport_id) REFERENCES airport(airport_id));
+                     FOREIGN KEY (final_arrival_airport_id) REFERENCES airport(airport_id),
+                     FOREIGN KEY (airline_id) REFERENCES airline(airline_id);
                      
 
 CREATE TABLE purchased (ticket_id                      varchar(10) NOT NULL,
