@@ -12,6 +12,12 @@
 	</head>
 	
 	<body>
+	<p style = "text-align:center; font-size:20px;"> CS336 Final Project</p>
+
+	<p style = "text-align:center">Created by Group 49: Aromal Suresh, Anthony Arca, Paul Kotys, Nikola Daninski </p>
+		
+		
+	<br>
 <!--
 		Hello World1 <!__ the usual HTML way __>
 		<% out.println("Hello World2"); %> <!__ output the same thing, but using 
