@@ -113,7 +113,7 @@ CREATE TABLE ticket (ticket_id                      varchar(10) NOT NULL,
                                   final_arrival_airport_id),
                      FOREIGN KEY (initial_departure_airport_id) REFERENCES airport(airport_id),
                      FOREIGN KEY (final_arrival_airport_id) REFERENCES airport(airport_id),
-                     FOREIGN KEY (airline_id) REFERENCES airline(airline_id);
+                     FOREIGN KEY (airline_id) REFERENCES airline(airline_id));
                      
 
 CREATE TABLE purchased (ticket_id                      varchar(10) NOT NULL,
