@@ -139,7 +139,7 @@ out.print("</tr>");
 //parse out the results
 while (result.next()) {
 	
-String ticket_id = result.getString("ticket_id");
+
 	//make a row
 	out.print("<tr>");
 	//make a column
