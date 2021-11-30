@@ -63,12 +63,12 @@ if(sort.equals("arrival_time"))
 	str += ("ORDER BY arrival_time ASC");
 if(sort.equals("flight_duration"))
 	str += ("ORDER BY flight_duration ASC");
-if(!flexible.isEmpty())
+/* if(!flexible.isEmpty())
 {
 	str += ("UNION SELECT * FROM Travel.ticket WHERE initial_departure_airport_id = '" + dep_air 
 			 + "' AND final_arrival_airport_id = '" + arr_air + "'");
 }
-
+*/
 
 
 str += ";";
