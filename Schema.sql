@@ -171,8 +171,8 @@ CREATE TABLE parts (ticket_id                      varchar(10) NOT NULL,
                                                                          flight_number));                                                                                                                                      
                                                                        
 CREATE TABLE question(	question text(1000) NOT NULL,
-						answer text(5000) NOT NULL,
-						username varchar(50) NOT NULL, 
-						PRIMARY KEY(username,
-									question),
-						FOREIGN KEY(username) references user(username));
+			answer text(5000) NOT NULL,
+			username varchar(50) NOT NULL, 
+			PRIMARY KEY(username,
+						question),
+			FOREIGN KEY(username) references user(username));
