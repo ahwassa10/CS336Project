@@ -170,9 +170,9 @@ CREATE TABLE parts (ticket_id                      varchar(10) NOT NULL,
                                                                          arrive_at_airport_id,
                                                                          flight_number));                                                                                                                                      
                                                                        
-CREATE TABLE question	( question  varchar(200) NOT NULL,
-			  answer    varchar(200) NOT NULL,
-                          username  varchar(50) NOT NULL, 
-                          PRIMARY KEY(username,
-                                    question),
-                          FOREIGN KEY(username) references user(username));
+CREATE TABLE question(	question text(1000) NOT NULL,
+						answer text(5000) NOT NULL,
+						username varchar(50) NOT NULL, 
+						PRIMARY KEY(username,
+									question),
+						FOREIGN KEY(username) references user(username));
