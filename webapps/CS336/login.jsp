@@ -55,6 +55,10 @@
 		else if(type.equals("representative")) {
 			response.sendRedirect("representativeConsole.jsp");
 		}
+		else if(type.equals("customer")) {
+			response.sendRedirect("UserConsole.jsp");
+		}
+		
 		
 		
 	} catch (Exception ex) {
@@ -63,10 +67,7 @@
 	}
 %>
 
-<br>
- <form method = "get" action = "Search.jsp">
- <input type = "submit" value = "Browse Flights">
- </form>
+
  
  <br>
 
