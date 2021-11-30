@@ -52,6 +52,10 @@
 		if (type.equals("admin")) {
 			response.sendRedirect("admin/adminConsole.jsp");
 		}
+		else if(type.equals("representative")) {
+			response.sendRedirect("representativeConsole.jsp");
+		}
+		
 		
 	} catch (Exception ex) {
 		out.print(ex);
