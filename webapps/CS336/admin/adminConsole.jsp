@@ -28,6 +28,34 @@
 				<option value="del">Delete user</option>
 			</select>&nbsp;<br> <input type="submit" value="Submit">
 		</form>
+
+		<br>
+
+		<h3>
+			Sales Reports
+		</h3>
+		<form method="get" action="salesReport.jsp">
+			<select name="month" size=1>
+				<option value="January">	January	</option>
+				<option value="February">	February</option>
+				<option value="March">		March	</option>
+				<option value="April">		April	</option>
+				<option value="May">		May		</option>
+				<option value="June">		June	</option>
+				<option value="July">		July	</option>
+				<option value="August">		August	</option>
+				<option value="September">	September</option>
+				<option value="October">	October	</option>
+				<option value="November">	November</option>
+				<option value="December">	December</option>
+			</select>&nbsp;<br>
+			<table>
+				<tr>    
+					<td>Year</td><td><input type="text" name="year"></td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit">
+		</form>
 <!--
 		Hello World1 <!__ the usual HTML way __>
 		<% out.println("Hello World2"); %> <!__ output the same thing, but using 
