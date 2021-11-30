@@ -56,7 +56,7 @@
 			response.sendRedirect("representativeConsole.jsp");
 		}
 		else if(type.equals("customer")) {
-			response.sendRedirect("UserConsole.jsp");
+			response.sendRedirect("userConsole.jsp");
 		}
 		
 		
