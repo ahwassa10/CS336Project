@@ -173,6 +173,5 @@ CREATE TABLE parts (ticket_id                      varchar(10) NOT NULL,
 CREATE TABLE question(	question text(1000) NOT NULL,
 			answer text(5000) NOT NULL,
 			username varchar(50) NOT NULL, 
-			PRIMARY KEY(username,
-						question),
+			PRIMARY KEY(username, question),
 			FOREIGN KEY(username) references user(username));
