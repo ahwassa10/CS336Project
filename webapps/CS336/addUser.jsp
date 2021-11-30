@@ -25,11 +25,18 @@
 		String newPassword = request.getParameter("newPassword");
 		String newFName = request.getParameter("newFName");
 		String newLName = request.getParameter("newLName");
+		String type = "customer";
+		try {
+			type = request.getParameter("type");
+		} catch (Exception f) {
+			type = "customer";
+		} finally {
+			if (type == null) type = "customer";
+		}
 
 
 		//Make an insert statement for the user table:
-		String insert = "INSERT INTO user"
-				+ "VALUES (?, ?, ?, ?)";
+		String insert = "INSERT INTO user VALUES (?, ?, ?, ?, ?)";
 		//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 		PreparedStatement ps = con.prepareStatement(insert);
 
@@ -38,6 +45,7 @@
 		ps.setString(2, newPassword);
 		ps.setString(3, newFName);
 		ps.setString(4, newLName);
+		ps.setString(5, type);
 		//Run the query against the DB
 		ps.executeUpdate();
 

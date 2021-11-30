@@ -52,7 +52,7 @@
 		  <input type="submit" value="submit" />
 		</form>
 		<br>
- -->	
+ 	
 	Type your username and password:
 	<br>
 		<form method="get" action="login.jsp">
@@ -89,7 +89,7 @@
 		<input type="submit" value="Register">
 		</form>
 	<br>
-	
+	-->
 <!-- 	Or we can query the beers with price:
 	<br>
 		<form method="get" action="query.jsp">
