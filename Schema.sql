@@ -23,12 +23,20 @@ CREATE TABLE associated(airline_id varchar(10) NOT NULL,
 CREATE TABLE aircraftOwned(airline_id       varchar(10) NOT NULL,
                            aircraft_id      varchar(10) NOT NULL,
                            total_seats      int,
-                           days_of_the_week int,
                            seats_available  int,
                            PRIMARY KEY (airline_id,
                                         aircraft_id),
                            FOREIGN KEY (airline_id) REFERENCES airline(airline_id));
 
+CREATE TABLE operatesOn(airline_id      varchar(10) NOT NULL,
+                        aircraft_id     varchar(10) NOT NULL,
+                        operateDay      varchar(10) NOT NULL,
+                        PRIMARY KEY (airline_id,
+                                     aircraft_id,
+                                     operateDay)
+                        FOREIGN KEY (airline_id,
+                                     aircraft_id) REFERENCES aircraftOwned(airline_id,
+                                                                           aircraft_id));
 
 CREATE TABLE user (username   varchar(50) NOT NULL,
                    password   varchar(50) NOT NULL,
