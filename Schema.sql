@@ -168,4 +168,11 @@ CREATE TABLE parts (ticket_id                      varchar(10) NOT NULL,
                                                                          aircraft_id,
                                                                          depart_from_airport_id,
                                                                          arrive_at_airport_id,
-                                                                         flight_number));
+                                                                         flight_number));                                                                                                                                      
+                                                                       
+CREATE TABLE question	( question  varchar(200) NOT NULL,
+						            answer    varchar(200) NOT NULL,
+                        username  varchar(50) NOT NULL, 
+                        PRIMARY KEY(username,
+                                    question),
+                         FOREIGN KEY(username) references user(username));
