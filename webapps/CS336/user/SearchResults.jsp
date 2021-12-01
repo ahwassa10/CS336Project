@@ -181,9 +181,16 @@ while (result.next()) {
 	out.print("</td>");
 	out.print("<td>");
 	//print out type
-	out.print(result.getString("type_one_way_or_round_trip"));
+	if(result.getString("type_one_way_or_round_trip").equals("1"))
+	{out.print("One-way");
 	out.print("</td>");
 	out.print("<td>");
+	}
+	if(result.getString("type_one_way_or_round_trip").equals("0"))
+	{out.print("Roundtrip");
+	out.print("</td>");
+	out.print("<td>");
+	}
 	//print out departure time
 	out.print(result.getString("departure_time"));
 	out.print("</td>");
