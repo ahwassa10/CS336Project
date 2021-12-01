@@ -33,7 +33,7 @@ CREATE TABLE operatesOn(airline_id      varchar(10) NOT NULL,
                         operateDay      varchar(10) NOT NULL,
                         PRIMARY KEY (airline_id,
                                      aircraft_id,
-                                     operateDay)
+                                     operateDay),
                         FOREIGN KEY (airline_id,
                                      aircraft_id) REFERENCES aircraftOwned(airline_id,
                                                                            aircraft_id));
@@ -170,8 +170,8 @@ CREATE TABLE parts (ticket_id                      varchar(10) NOT NULL,
                                                                          arrive_at_airport_id,
                                                                          flight_number));                                                                                                                                      
                                                                        
-CREATE TABLE question(	question        text(1000) NOT NULL,
-			answer          text(5000) NOT NULL,
-			username        varchar(50) NOT NULL, 
-			PRIMARY KEY(username, question),
-			FOREIGN KEY(username) references user(username));
+CREATE TABLE question(question        varchar(255) NOT NULL,
+                      answer          varchar(255) NOT NULL,
+                      username        varchar(50)  NOT NULL, 
+                      PRIMARY KEY(username, question),
+                      FOREIGN KEY(username) references user(username));
