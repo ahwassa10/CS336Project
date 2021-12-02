@@ -12,7 +12,15 @@
 	<body>
 		<h1>Welcome to the User Console!</h1>
 		
-		<% out.println("Hello World2"); %>
+<form method="get" action="Search.jsp">
+	<input type="submit" value="Browse Flights">
+</form>
+
+<br>
+
+<form method="get" action="Homepage.jsp">
+	<input type="submit" value="Logout">
+	
 	
 	</body>
 
