@@ -12,14 +12,15 @@
 	<body>
 		<h1>Welcome to the User Console!</h1>
 		
-<form method="get" action="Search.jsp">
-	<input type="submit" value="Browse Flights">
-</form>
+		<form method="get" action="Search.jsp">
+			<input type="submit" value="Browse Flights">
+		</form>
 
-<br>
+		<br>
 
-<form method="get" action="Homepage.jsp">
-	<input type="submit" value="Logout">
+		<form method="get" action="Homepage.jsp">
+			<input type="submit" value="Logout">
+		</form>
 	
 	
 	</body>
