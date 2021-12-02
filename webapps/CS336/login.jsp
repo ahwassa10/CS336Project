@@ -53,10 +53,10 @@
 			response.sendRedirect("admin/adminConsole.jsp");
 		}
 		else if(type.equals("representative")) {
-			response.sendRedirect("representativeConsole.jsp");
+			response.sendRedirect("representative/representativeConsole.jsp");
 		}
 		else if(type.equals("customer")) {
-			response.sendRedirect("userConsole.jsp");
+			response.sendRedirect("user/userConsole.jsp");
 		}
 		
 		
