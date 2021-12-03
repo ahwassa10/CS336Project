@@ -10,7 +10,7 @@
 	</head>
 	
 	<body>
-		<h1>Welcome to the User Console!</h1>
+		<h1>Welcome to the User Console <%=session.getAttribute("username")%>!</h1>
 		
 		<p>What would you like to do?</p>
 		
