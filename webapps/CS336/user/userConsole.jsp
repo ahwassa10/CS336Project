@@ -3,7 +3,7 @@
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>userConsole</title>
@@ -12,17 +12,24 @@
 	<body>
 		<h1>Welcome to the User Console!</h1>
 		
+		<p>What would you like to do?</p>
+		
 		<form method="get" action="Search.jsp">
-			<input type="submit" value="Browse Flights">
+			<button type="submit">Browse Flights</button>
+		</form>
+		
+		<form method="get" action="qa.jsp">
+			<button type="submit">Browse Questions and Answers</button>
+		</form>
+		
+		<form method="get" action="reservations.jsp">
+			<button type="submit">Browse Your Reservations</button>
 		</form>
 
-		<br>
-
-		<form method="get" action="Homepage.jsp">
-			<input type="submit" value="Logout">
+		<form method="get" action="../Homepage.jsp">
+			<button type="submit">Logout</button>
 		</form>
-	
-	
+			
 	</body>
 
 </html>
