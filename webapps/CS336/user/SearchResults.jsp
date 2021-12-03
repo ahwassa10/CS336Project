@@ -297,11 +297,15 @@ while (result.next()) {
 	<form action = "makeReservation.jsp">
 	<input type = "submit" name = "makeReservation" value = "Make Reservation">
 	<input type = "hidden" name = ticket_id value ="<%=result.getString("ticket_id")%>">
+	<input type = "hidden" name = initial_departure_airport_id value ="<%=result.getString("initial_departure_airport_id")%>">
+	<input type = "hidden" name = final_arrival_airport_id value ="<%=result.getString("final_arrival_airport_id")%>">
 	</form>
 	
 	<form action = "joinWaitlist.jsp">
 	<input type = "submit" name = "makeReservation" value = "Join Waitlist">
 	<input type = "hidden" name = ticket_id value ="<%=result.getString("ticket_id")%>">
+	<input type = "hidden" name = initial_departure_airport_id value ="<%=result.getString("initial_departure_airport_id")%>">
+	<input type = "hidden" name = final_arrival_airport_id value ="<%=result.getString("final_arrival_airport_id")%>">
 	</form>
 	
 	</td>
