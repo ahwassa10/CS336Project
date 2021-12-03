@@ -51,12 +51,12 @@ cal2.setTime(arri_date);
 
 String str = ("SELECT * FROM Travel.ticket WHERE initial_departure_airport_id = '" + dep_air 
 + "' AND departure_date = '" + dep_date + "' AND final_arrival_airport_id = '" + arr_air 
-+ "' AND arrival_date = '" + arr_date + "' ");
++ "' AND arrival_date = '" + arr_date + "'");
 
 if(triptype.equals("one_way"))
-	str += ("AND type_one_way_or_round_trip = '1'");
+	str += (" AND type_one_way_or_round_trip = '1'");
 if(triptype.equals("round_trip"))
-	str += ("AND type_one_way_or_round_trip = '0'");
+	str += (" AND type_one_way_or_round_trip = '0'");
 
 if(!filter1.isBlank())
 	str += (" AND total_fare = " + filter1);
