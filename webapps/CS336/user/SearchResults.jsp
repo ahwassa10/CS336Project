@@ -74,7 +74,7 @@ if(!filter5.isBlank())
 	str += (" AND arrival_time = '" + filter5 + "'");
 
 
-
+if(flexible!= null)
 if(flexible.equals("flexible"))
 {
 	int arr_count = 0;
