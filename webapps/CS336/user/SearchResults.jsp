@@ -3,6 +3,7 @@
 	pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
   <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+<%@ page import="java.util.Date,java.text.SimpleDateFormat, java.util.Calendar"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +11,7 @@
 <title>	Results </title>
 </head>
 <body>
+
 
 
 <%
@@ -20,12 +22,16 @@ Statement stmt = con.createStatement();
 
 List<String> list = new ArrayList<String>();
 
+
 String dep_air = request.getParameter("initial_departure_airport_id");   
-String dep_date = request.getParameter("departure_date");   
+String  dep_date =request.getParameter("departure_date");   
 
 
 String arr_air = request.getParameter("final_arrival_airport_id");
-String arr_date = request.getParameter("arrival_date");   
+String arr_date = request.getParameter("arrival_date");  
+
+Date dept_date = new SimpleDateFormat("yyyy-MM-dd").parse(dep_date);
+Date arri_date = new SimpleDateFormat("yyyy-MM-dd").parse(arr_date);
 
 String triptype = request.getParameter("button1") + "";   
 String sort = request.getParameter("button2") + ""; 
@@ -35,26 +41,38 @@ String filter2 = request.getParameter("number_of_stops") + "";
 String filter3 = request.getParameter("airline_id") + "";
 String filter4 = request.getParameter("departure_time") + "";
 String filter5 = request.getParameter("arrival_time") + "";
-String flexible = request.getParameter("flexible") + "";
+String flexible = request.getParameter("button3");
+
+Calendar cal = Calendar.getInstance();
+Calendar cal2 = Calendar.getInstance();
+cal.setTime(dept_date);
+cal2.setTime(arri_date);
+
 
 String str = ("SELECT * FROM Travel.ticket WHERE initial_departure_airport_id = '" + dep_air 
 + "' AND departure_date = '" + dep_date + "' AND final_arrival_airport_id = '" + arr_air 
 + "' AND arrival_date = '" + arr_date + "' ");
 
-if(!filter1.isBlank())
-	str += ("AND total_fare = " + filter1);
-if(!filter2.isBlank())
-	str += ("AND number_of_stops = " + filter2);
-if(!filter3.isBlank())
-	str += ("AND airline_id = '" + filter3 + "'");
-if(!filter4.isBlank())
-	str += ("AND departure_time = '" + filter4 + "'");
-if(!filter5.isBlank())
-	str += ("AND arrival_time = '" + filter5 + "'");
 if(triptype.equals("one_way"))
 	str += ("AND type_one_way_or_round_trip = '1'");
 if(triptype.equals("round_trip"))
 	str += ("AND type_one_way_or_round_trip = '0'");
+
+if(!filter1.isBlank())
+	str += ("AND total_fare = " + filter1);
+
+if(!filter2.isBlank())
+	str += ("AND number_of_stops = " + filter2);
+
+if(!filter3.isBlank())
+	str += ("AND airline_id = '" + filter3 + "'");
+
+if(!filter4.isBlank())
+	str += ("AND departure_time = '" + filter4 + "'");
+
+if(!filter5.isBlank())
+	str += ("AND arrival_time = '" + filter5 + "'");
+
 if(sort.equals("total_fare"))
 	str += ("ORDER BY total_fare ASC");
 if(sort.equals("departure_time"))
@@ -63,17 +81,84 @@ if(sort.equals("arrival_time"))
 	str += ("ORDER BY arrival_time ASC");
 if(sort.equals("flight_duration"))
 	str += ("ORDER BY flight_duration ASC");
-/* if(!flexible.isEmpty())
+
+
+
+
+if(flexible.equals("flexible"))
 {
-	str += ("UNION SELECT * FROM Travel.ticket WHERE initial_departure_airport_id = '" + dep_air 
-			 + "' AND final_arrival_airport_id = '" + arr_air + "'");
+	int arr_count = 0;
+	while(arr_count < 3)
+	{
+	cal2.add(Calendar.DAY_OF_YEAR, -1);
+	arri_date = cal2.getTime();
+	SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+	String arrival_date = format1.format(arri_date);
+	
+	int dep_count = 0;	
+	
+	dept_date = new SimpleDateFormat("yyyy-MM-dd").parse(dep_date);
+	cal.setTime(dept_date);
+	
+	while(dep_count < 3)
+	{ 
+		
+		cal.add(Calendar.DAY_OF_YEAR, -1);
+		dept_date = cal.getTime();
+		SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");
+		String departure_date = format2.format(dept_date);
+		
+	 str += ("UNION SELECT * FROM Travel.ticket WHERE initial_departure_airport_id = '" + dep_air 
+	 + "' AND final_arrival_airport_id = '" + arr_air + "' AND departure_date = '" + departure_date
+	 + "' AND arrival_date = '" + arrival_date + "'");
+	  dep_count++;
+	}
+	arr_count++;
+	
 }
-*/
+	
+	arri_date = new SimpleDateFormat("yyyy-MM-dd").parse(arr_date);
+	cal2.setTime(arri_date);
+
+	int arr_count2 = 0;
+	while(arr_count2 < 3)
+	{
+	cal2.add(Calendar.DAY_OF_YEAR, 1);
+	arri_date = cal2.getTime();
+	SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+	String arrival_date = format1.format(arri_date);
+	
+	int dep_count2 = 0;		
+	dept_date = new SimpleDateFormat("yyyy-MM-dd").parse(dep_date);
+	cal.setTime(dept_date);
+	
+	while(dep_count2 < 3)
+	{ 
+		cal.add(Calendar.DAY_OF_YEAR, 1);
+		dept_date = cal.getTime();
+		SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");
+	    String departure_date = format2.format(dept_date);
+		
+	 str += ("UNION SELECT * FROM Travel.ticket WHERE initial_departure_airport_id = '" + dep_air 
+	 + "' AND final_arrival_airport_id = '" + arr_air + "'" + "AND departure_date = '" + departure_date
+	 + "' AND arrival_date = '" + arrival_date + "'");
+	  dep_count2++;
+	}
+	arr_count2++;
+	
+}
+	
+	
+}
+
 
 
 str += ";";
+
+//out.print(str);
+
 	
-	
+
 ResultSet result = stmt.executeQuery(str);
 
 //if(!result.isBeforeFirst())
@@ -87,7 +172,7 @@ out.print("<tr>");
 //make a column
 out.print("<td>");
 
-out.print("   ");
+out.print(" Ticket Number  ");
 out.print("</td>");
 //print out column header
 out.print("<td>");
@@ -145,7 +230,7 @@ while (result.next()) {
 	//make a column
 	out.print("</td>");
 	out.print("<td>");
-	out.print("<input type='radio' name='button3' value='ticket_id'>");
+	out.print(result.getString("ticket_id"));
 	out.print("</td>");
 	out.print("<td>");
 	//Print out dept airport id:
@@ -212,6 +297,21 @@ con.close();
 	
 %>
 
+    	<form method="get" action="makeReservation.jsp">   	
+   Enter the ticket id that you would like to book:	
+	<form action="makeReservation.jsp">
+	<br> <input type="text" placeholder="Ticket ID" name="ticket_id"> <br>
+		<input type="submit" value="Make Reservation">
+		
+		<br>
+		
+		
+		
+		
+		
+		
+		
+</form>
     	
 	
 
