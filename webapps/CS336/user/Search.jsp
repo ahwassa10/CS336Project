@@ -39,6 +39,11 @@ Sort By:
  	<input type="text" name="final_arrival_airport_id" placeholder="Arrival Airport" > 
 	<input type="date" name="arrival_date" placeholder="Arrival Date"> 
 	<br>
+			
+	<input type="radio" name="button3" id = "flexible" value="flexible"> Flexible Dates
+	<input type="radio" name="button3" id = "flexible" value="not_flexible"> Not Flexible Dates
+	 
+	<br>
 	
 	<form action="SearchResults.jsp">
 		<input type="submit" value="Search">
