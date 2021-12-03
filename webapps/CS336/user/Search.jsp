@@ -40,8 +40,8 @@ Sort By:
 	<input type="date" name="arrival_date" placeholder="Arrival Date"> 
 	<br>
 			
-	<input type="radio" name="button3" id = "flexible" value="flexible"> Flexible Dates
-	<input type="radio" name="button3" id = "flexible" value="not_flexible"> Not Flexible Dates
+	<input type="checkbox" name="button3" id = "flexible" value="flexible"> Flexible Dates
+	
 	 
 	<br>
 	
