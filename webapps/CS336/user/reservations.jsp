@@ -10,6 +10,7 @@
 		<title>Reservations</title>
 	</head>
 	
+		<h1>Reservations for <%=session.getAttribute("username")%> </h1>
 	
 	
 	<body>
