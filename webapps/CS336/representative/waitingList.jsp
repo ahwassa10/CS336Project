@@ -8,6 +8,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Waiting List</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+	</style>
 </head>
 <body>
 
@@ -48,17 +53,17 @@
 	out.print("<tr>");
 	
 	//This makes the columns
-	out.print("<td>");
+	out.print("<th>");
 	out.print("Username");
-	out.print("</td>");
+	out.print("</th>");
 	
-	out.print("<td>");
+	out.print("<th>");
 	out.print("First Name");
-	out.print("</td>");
+	out.print("</th>");
 	
-	out.print("<td>");
+	out.print("<th>");
 	out.print("Last Name");
-	out.print("</td>");
+	out.print("</th>");
 	
 	while(result.next()){
 		out.print("<tr>");
