@@ -37,7 +37,7 @@
 	//This has the results from the query
 	ResultSet result = ps.executeQuery();
 	
-	if(!result.next()){
+	if(!result.isBeforeFirst()){
 		out.print("The waiting list is currently empty.");
 		return;
 	}
