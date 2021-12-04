@@ -25,8 +25,8 @@
 
             Statement stmt = con.createStatement();
 			String str;
-			if (revenueBy.equals("flight_id")) {
-				str = "SELECT flight_number,SUM((NOT was_cancelled)*total_fare+was_cancelled*cancellation_fee) revenue FROM ticket GROUP BY flight_number";
+			if (revenueBy.equals("flight_number")) {
+				str = "SELECT flight_number,SUM((NOT was_cancelled)*total_fare+was_cancelled*cancellation_fee) revenue FROM ticket GROUP BY airline_id,aircraft_id,flight_number";
 			}
 			else if (revenueBy.equals("airline_id")) {
 				str = "SELECT airline_id,SUM((NOT was_cancelled)*total_fare+was_cancelled*cancellation_fee) revenue FROM ticket GROUP BY airline_id";

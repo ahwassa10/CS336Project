@@ -60,13 +60,19 @@
 		<br>
 
 		<h3>
-			List Reservations by:
+			List Reservations for:
 		</h3>
 		<form method="get" action="listReservations.jsp">
 			<select name="reservationsBy" size=1>
 				<option value="flight_number">Flight Number</option>
 				<option value="name">Customer Name</option>
-			</select>&nbsp;<br> <input type="submit" value="Submit">
+			</select>
+			<table>
+				<tr>    
+					<td><input type="text" name="input"></td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit">
 		</form>
 
 		<br>
@@ -76,7 +82,7 @@
 		</h3>
 		<form method="get" action="listRevenue.jsp">
 			<select name="revenueBy" size=1>
-				<option value="flight_id">Flight</option>
+				<option value="flight_number">Flight</option>
 				<option value="airline_id">Airline</option>
 				<option value="username">Customer</option>
 			</select>&nbsp;<br> <input type="submit" value="Submit">
