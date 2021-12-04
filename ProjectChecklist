@@ -12,8 +12,8 @@ Nikola
 [] filter the list of flights by various criteria (price, number of stops, airline, take-off time, landing time)
 
 Paul
-[] Browse questions and answers
-[] Search questions and answers by keywords
+[x] Browse questions and answers
+[x] Search questions and answers by keywords
 [] make flight reservations/buy the ticket.
 [] enter the waiting list if the flight is full
 [x] view all the past flight reservations with their details
