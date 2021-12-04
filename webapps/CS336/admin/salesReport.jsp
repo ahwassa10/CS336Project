@@ -30,7 +30,7 @@
 			Connection con = db.getConnection();
 
             Statement stmt = con.createStatement();
-			String str = "SELECT total_fare FROM ticket WHERE MONTH(purchase_date)=? and YEAR(purchase_date)=?";
+			String str = "SELECT booking_fee FROM ticket WHERE MONTH(purchase_date)=? and YEAR(purchase_date)=?";
 			PreparedStatement ps = con.prepareStatement(str);
 
 			ps.setString(1,month);
@@ -41,7 +41,7 @@
 			int sum = 0;
 			int count = 0;
 			while (result.next()) {
-				sum += result.getInt("total_fare");
+				sum += result.getInt("booking_fee");
 				count++;
 			}
 			if (count==0) {

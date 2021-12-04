@@ -61,6 +61,7 @@
 			out.print("<td>purchase_date</td>");
 			out.print("<td>purchase_time</td>");
 			out.print("<td>total_fare</td>");
+			out.print("<td>booking_fee</td>");
 			out.print("<td>cancellation_fee</td>");
 			out.print("<td>was_cancelled</td>");
 			out.print("<td>flight_duration</td>");
@@ -87,6 +88,7 @@
 				out.print("<td>"+result.getString("purchase_date")+"</td>");
 				out.print("<td>"+result.getString("purchase_time")+"</td>");
 				out.print("<td>"+result.getString("total_fare")+"</td>");
+				out.print("<td>"+result.getString("booking_fee")+"</td>");
 				out.print("<td>"+result.getString("cancellation_fee")+"</td>");
 				out.print("<td>"+result.getString("was_cancelled")+"</td>");
 				out.print("<td>"+result.getString("flight_duration")+"</td>");
