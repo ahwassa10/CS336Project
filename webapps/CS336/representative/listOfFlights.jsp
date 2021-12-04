@@ -248,6 +248,10 @@ Arriving Flights
 	}
 
 %>
+	
+<form method="post" action="representativeConsole.jsp">
+		<input type="submit" value="Back">
+</form>
 
 </body>
 </html>
