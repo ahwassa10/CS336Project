@@ -22,7 +22,7 @@
 			<button type="submit">Browse Questions and Answers</button>
 		</form>
 		
-		<form method="get" action="reservations.jsp">
+		<form method="get" action="viewReservations.jsp">
 			<button type="submit">Browse Your Reservations</button>
 		</form>
 

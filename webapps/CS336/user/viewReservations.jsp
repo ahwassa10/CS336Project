@@ -7,7 +7,7 @@
 
 <html>
 	<head>
-		<title>Reservations</title>
+		<title>View Reservations</title>
 	</head>
 	
 		<h1>Reservations for <%=session.getAttribute("username")%> </h1>
@@ -22,7 +22,35 @@
 		
 		Statement stmt = con.createStatement();
 		ResultSet result = stmt.executeQuery(str);
+		%>
 		
+		<table>
+			<tr>
+				<th>Ticket ID</th>
+				<th>Initial Departure Airport</th>
+				<th>Final Arrival Airport</th>
+				<th>One Way / Round Trip </th>
+				<th>Domestic / International </th>
+				<th>Class</th>
+				<th>Purchase Date</th>
+				<th>Purchase Time</th>
+				<th>Departure Date</th>
+				<th>Departure Time</th>
+				<th>Arrival Date</th>
+				<th>Arrival Time</th>
+				<th>Number of Stops</th>
+				<th>Total Fare</th>
+				<th>Booking Fee</th>
+				<th>Cancellation Fee</th>
+				<th>Cancelled</th>
+			</tr>
+			
+			
+			
+		
+		</table>
+		
+		<!--
 		out.println("Printing ticket_id, initial_departure_airport_id, final_arrival_airport_id");
 		
 		while (result.next()) {
@@ -30,9 +58,7 @@
 					    result.getString("initial_departure_airport_id") + " " +
 					    result.getString("final_arrival_airport_id"));
 			out.println();
-		}
-		
-		%>
+		} -->
 	
 	
 	<body>
