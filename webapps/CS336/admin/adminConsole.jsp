@@ -91,9 +91,16 @@
 		<br>
 
 		<h3>
-			Request Customer that Generated Most Revenue:
+			Find Customer that Generated Most Revenue:
 		</h3>
 		<form method="get" action="bestCustomer.jsp">
+			<input type="submit" value="Request">
+		</form>
+
+		<h3>
+			List Flights with Most Tickets Sold:
+		</h3>
+		<form method="get" action="listActive.jsp">
 			<input type="submit" value="Request">
 		</form>
 <!--
