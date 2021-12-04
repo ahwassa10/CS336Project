@@ -67,20 +67,203 @@
 				<th>Cancelled</th>
 			</tr>
 			
-			
+			<%
+				while(resultPast.next()) {
+					out.print("<tr>");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("ticked_id"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("initial_departure_airport_id"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("final_arrival_airport_id"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("airline_id"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("type_one_way_or_round_trip"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("type_domestic_or_international"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("ticket_class"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("number_of_stops"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("flight_duration"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("purchase_date"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("purchase_time"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("departure_date"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("departure_time"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("arrival_date"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("arrival_time"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("total_fare"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("booking_fee"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("cancellation_fee"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("was_cancelled"));
+					out.print("</td");
+					
+					out.print("</tr>");
+				}
+			%>
 			
 		
 		</table>
+
+		<h1>Table of Upcoming Reservations</h1>
+		<table>
+			<tr>
+				<th>Ticket ID</th>
+				<th>Initial Departure Airport</th>
+				<th>Final Arrival Airport</th>
+				<th>One Way / Round Trip </th>
+				<th>Domestic / International </th>
+				<th>Class</th>
+				<th>Number of Stops</th>
+				<th>Flight Duration</th>
+				<th>Purchase Date</th>
+				<th>Purchase Time</th>
+				<th>Departure Date</th>
+				<th>Departure Time</th>
+				<th>Arrival Date</th>
+				<th>Arrival Time</th>
+				<th>Total Fare</th>
+				<th>Booking Fee</th>
+				<th>Cancellation Fee</th>
+				<th>Cancelled</th>
+			</tr>
+			
+			<%
+				while(resultPast.next()) {
+					out.print("<tr>");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("ticked_id"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("initial_departure_airport_id"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("final_arrival_airport_id"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("airline_id"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("type_one_way_or_round_trip"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("type_domestic_or_international"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("ticket_class"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("number_of_stops"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("flight_duration"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("purchase_date"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("purchase_time"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("departure_date"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("departure_time"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("arrival_date"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("arrival_time"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("total_fare"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("booking_fee"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("cancellation_fee"));
+					out.print("</td");
+					
+					out.print("<td>");
+					out.print(resultPast.getString("was_cancelled"));
+					out.print("</td");
+					
+					out.print("</tr>");
+				}
+			%>
+			
+			
 		
-		<!--
-		out.println("Printing ticket_id, initial_departure_airport_id, final_arrival_airport_id");
-		
-		while (result.next()) {
-			out.println(result.getString("ticket_id") + " " +
-					    result.getString("initial_departure_airport_id") + " " +
-					    result.getString("final_arrival_airport_id"));
-			out.println();
-		} -->
+		</table>		
 	
 	
 	<body>
