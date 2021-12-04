@@ -66,10 +66,10 @@
 			<select name="reservationsBy" size=1>
 				<option value="flight_number">Flight Number</option>
 				<option value="name">Customer Name</option>
-			</select>
+			</select>&nbsp;<br>
 			<table>
 				<tr>    
-					<td><input type="text" name="input"></td>
+					<td>Input</td><td><input type="text" name="input"></td>
 				</tr>
 			</table>
 			<input type="submit" value="Submit">

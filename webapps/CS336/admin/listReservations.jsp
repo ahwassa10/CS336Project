@@ -8,16 +8,17 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Revenue Summary</title>
+		<title>Reservations</title>
 	</head>
 	
 	<body>
 		<h1>
-			Revenue Summary for
+			Reservations for 
 			<% 
 				String reservationsBy = request.getParameter("reservationsBy");
+				out.print(reservationsBy+" ");
 				String input = request.getParameter("input");
-				out.print(reservationsBy);
+				out.print(input);
 			%>
 		</h1>
 		<%
