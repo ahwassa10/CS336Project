@@ -10,8 +10,9 @@
 	ApplicationDB db = new ApplicationDB();
 	Connection con = db.getConnection();
 	
-	String query = "SELECT question, answer, username " +
-				   "FROM question";
+	String query = "SELECT q.question, q.answer, q.username " +
+				   "FROM question q " +
+				   "WHERE q.question like \"%" + request.getParameter("keyword") + "%\"";
 	
 	Statement browseQuestions = con.createStatement();
 	ResultSet resultBrowseQuestions = browseQuestions.executeQuery(query);
@@ -20,16 +21,14 @@
 
 <html>
 <head>
-	<title>Questions and Answers</title>
+	<title>Search Results</title>
 	<style>
 	table, th, td {
-		border: 1px solid black;
+		border: 1px solid black
 	}
 	</style>
 </head>
-	
-<body>
-	<h1>Browsing Questions and Answers</h1>
+	<h1>Printing Questions that Match the Keyword: <%=request.getParameter("keyword")%> </h1>
 	
 	<table>
 		<tr>
@@ -39,7 +38,14 @@
 		</tr>
 		
 		<%
-			while(resultBrowseQuestions.next()) {
+		int numberOfResults = 0;
+		if (resultBrowseQuestions.next() == false) {
+			out.print("<tr>");
+			out.print("<td>...</td>");
+			out.print("<td>...</td>");
+			out.print("<td>...</td>");
+		} else {
+			do {
 				out.print("<tr>");
 				
 				out.print("<td>");
@@ -62,21 +68,25 @@
 				
 				out.print("</tr>");
 				
-			}
+				numberOfResults += 1;
+				
+			} while (resultBrowseQuestions.next());
+		}
 		%>
 	</table>
+
+	<%
+		String keyword = request.getParameter("keyword");
+		
+		if (numberOfResults == 0) {
+			out.print("<p>We were not able to find any results for the keyword \"" + keyword + "\" :(</p>");
+		} else if (numberOfResults == 1) {
+			out.print("<p>We found exactly one result for the keyword \"" + keyword + "\"</p>");
+		} else {
+			out.print("<p>We found " + numberOfResults + " results for the keyword \"" + keyword + "\"</p>");
+		}
 	
-	<hr>
-	<h1>Search by Keyword</h1>
-	<form action="qaSearchResults.jsp" method="get">
-		<label>Input keyword: </label>
-		<input type="text" name="keyword">
-		<button type="submit">Submit</button>
-	</form>
-	
+	%>
 
-
-
-</body>
 
 </html>
