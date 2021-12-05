@@ -83,6 +83,11 @@
 		<br>
 		<button type="submit">Submit Question</button>
 	</form>
+	
+	<hr>
+	<form method="get" action="userConsole.jsp">
+		<button type="submit">Go Back to the User Console</button>
+	</form>
 
 </body>
 
