@@ -34,9 +34,9 @@
 			try {
 				Statement browseQuestions = con.createStatement();
 				ret = browseQuestions.executeUpdate(query);
-				out.print("<p>Successfully added the question!</p>");
+				out.print("<h2>Successfully added the question!</h2>");
 			} catch(Exception ex) {
-				out.print("<p>Unable to add question, probably a duplicate</p>");
+				out.print("<h2>Unable to add question, probably a duplicate</h2>");
 			}
 		%>
 		

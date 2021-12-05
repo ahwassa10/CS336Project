@@ -28,6 +28,7 @@
 	}
 	</style>
 </head>
+<body>
 	<h1>Printing Questions that Match the Keyword: <%=request.getParameter("keyword")%> </h1>
 	
 	<table>
@@ -87,6 +88,9 @@
 		}
 	
 	%>
-
-
+	
+	<form method="get" action="qa.jsp">
+		<button type="submit">Go Back to Questions and Answers Page</button>
+	</form>
+</body>
 </html>
