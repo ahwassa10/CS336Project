@@ -8,7 +8,8 @@ CREATE TABLE airport (airport_id varchar(10) NOT NULL,
                       PRIMARY KEY(airport_id));
 
 
-CREATE TABLE airline (airline_id varchar(10) NOT NULL,
+CREATE TABLE airline (airline_id    varchar(10) NOT NULL,
+                      airline_name  varchar(20);
                       PRIMARY KEY(airline_id));
 
 

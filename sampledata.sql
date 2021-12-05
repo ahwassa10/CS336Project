@@ -68,34 +68,26 @@ INSERT INTO associated VALUES("Jet Blue", "DEL");
 INSERT INTO associated VALUES("Delta", "DEL");
 
 
-INSERT INTO aircraftowned VALUES("United", "Aircraft01", "3", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft02", "3", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft03", "3", "3");
-INSERT INTO aircraftowned VALUES("Spirit", "Aircraft04", "3", "3");
-INSERT INTO aircraftowned VALUES("Spirit", "Aircraft05", "3", "3");
-INSERT INTO aircraftowned VALUES("Spirit", "Aircraft06", "3", "3");
-INSERT INTO aircraftowned VALUES("Delta", "Aircraft07", "3", "3");
-INSERT INTO aircraftowned VALUES("Delta", "Aircraft08", "2", "2");
-INSERT INTO aircraftowned VALUES("Jet Blue", "Aircraft09", "2", "0");
-INSERT INTO aircraftowned VALUES("Jet Blue", "Aircraft10", "3", "0");
-INSERT INTO aircraftowned VALUES("EthiopiaAL", "Aircraft11", "3", "2");
-INSERT INTO aircraftowned VALUES("Frontier", "Aircraft12", "3", "3");
-INSERT INTO aircraftowned VALUES("AlaskaAL", "Aircraft13", "3", "3");
-INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft14", "3", "3");
-INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft15", "3", "3");
-INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft16", "3", "3");
-INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft17", "3", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft18", "3", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft19", "3", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft20", "3", "3");
-
-INSERT INTO operateson VALUES("United", "Aircraft02", "Monday");
-INSERT INTO operateson VALUES("Spirit", "Aircraft04", "Tuesday");
-INSERT INTO operateson VALUES("Spirit", "Aircraft06", "Wednesday");
-INSERT INTO operateson VALUES("Delta", "Aircraft08", "Thursday");
-INSERT INTO operateson VALUES("Jet Blue", "Aircraft10", "Friday");
-INSERT INTO operateson VALUES("Frontier", "Aircraft12", "Saturday");
-INSERT INTO operateson VALUES("SingaporAL", "Aircraft14", "Sunday");
+INSERT INTO aircraftowned VALUES("United", "Aircraft01", "3");
+INSERT INTO aircraftowned VALUES("United", "Aircraft02", "3");
+INSERT INTO aircraftowned VALUES("United", "Aircraft03", "3");
+INSERT INTO aircraftowned VALUES("Spirit", "Aircraft04", "3");
+INSERT INTO aircraftowned VALUES("Spirit", "Aircraft05", "3");
+INSERT INTO aircraftowned VALUES("Spirit", "Aircraft06", "3");
+INSERT INTO aircraftowned VALUES("Delta", "Aircraft07", "3");
+INSERT INTO aircraftowned VALUES("Delta", "Aircraft08", "2");
+INSERT INTO aircraftowned VALUES("Jet Blue", "Aircraft09", "2");
+INSERT INTO aircraftowned VALUES("Jet Blue", "Aircraft10", "3");
+INSERT INTO aircraftowned VALUES("EthiopiaAL", "Aircraft11", "3");
+INSERT INTO aircraftowned VALUES("Frontier", "Aircraft12", "3");
+INSERT INTO aircraftowned VALUES("AlaskaAL", "Aircraft13", "3");
+INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft14", "3");
+INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft15", "3");
+INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft16", "3");
+INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft17", "3");
+INSERT INTO aircraftowned VALUES("United", "Aircraft18", "3");
+INSERT INTO aircraftowned VALUES("United", "Aircraft19", "3");
+INSERT INTO aircraftowned VALUES("United", "Aircraft20", "3");
 
 INSERT INTO user VALUES("Customer1", "10", "Bob", "Smith", "customer");
 INSERT INTO user VALUES("Customer2", "20", "Bruce", "Doe", "customer");
@@ -113,6 +105,7 @@ INSERT INTO user VALUES("rep2", "2468", "represent", "ative", "representative");
 -- I commented out the administrator and rep because we already make them in the main Schema. 
 -- They're only here for easy reference.
 
+INSERT INTO flightOperated VALUES("United"
 INSERT INTO flightOperated VALUES("United", "Aircraft01", "EWR", "LAX", "0001", "2021-12-03", "10:00", "2021-12-03", "16:00", "0", "1");
 INSERT INTO flightOperated VALUES("United", "Aircraft02", "LAX", "JFK", "0002", "2021-12-04", "12:00", "2021-12-04", "18:00", "0", "2");
 INSERT INTO flightOperated VALUES("Spirit", "Aircraft04", "EWR", "JFK", "0003", "2021-12-05", "14:00", "2021-12-05", "18:00", "0", "3");
@@ -127,6 +120,15 @@ INSERT INTO flightOperated VALUES("SingaporAL", "Aircraft14", "HKG", "JFK", "000
 -- ETHIOPIA AL DOES NOT GO FROM JFK OR LAX TO EWR OR HKG OR SIN
 -- SINGAPORAL DOES NOT GO FROM HKG SIN JFK OR LAX TO EWR
 -- we have associated for: EWR, LAX, HKG, SIN, JFK
+
+INSERT INTO operateson VALUES("United", "Aircraft02", "Monday");
+INSERT INTO operateson VALUES("Spirit", "Aircraft04", "Tuesday");
+INSERT INTO operateson VALUES("Spirit", "Aircraft06", "Wednesday");
+INSERT INTO operateson VALUES("Delta", "Aircraft08", "Thursday");
+INSERT INTO operateson VALUES("Jet Blue", "Aircraft10", "Friday");
+INSERT INTO operateson VALUES("Frontier", "Aircraft12", "Saturday");
+INSERT INTO operateson VALUES("SingaporAL", "Aircraft14", "Sunday");
+
 
 INSERT INTO waitlist VALUES("United", "Aircraft01", "EWR", "LAX", "0001", "Customer1", "1");
 INSERT INTO waitlist VALUES("United", "Aircraft01", "EWR", "LAX", "0001", "Customer2", "2");
