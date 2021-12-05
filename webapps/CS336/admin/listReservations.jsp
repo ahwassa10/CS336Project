@@ -19,6 +19,10 @@
 				out.print(reservationsBy+" ");
 				String input = request.getParameter("input");
 				out.print(input);
+				if(input.equals("flight_number")) {
+					String input2 = request.getParameter("input2");
+					out.print("airline_id "+input2);
+				}
 			%>
 		</h1>
 		<%
@@ -28,19 +32,25 @@
             Statement stmt = con.createStatement();
 			String str;
 
+			PreparedStatement ps;
 			if (reservationsBy.equals("flight_number")) {
-				str = "SELECT * FROM ticket WHERE flight_number=?";
+				str = "SELECT * FROM ticket JOIN parts USING(ticket_id) WHERE flight_number=? AND airline_id=?";
+				ps = con.prepareStatement(str);
+				ps.setString(1,input);
+				ps.setString(2,input2);
 			}
 			else if (reservationsBy.equals("name")) {
-				str = "SELECT t.* FROM ticket t JOIN purchased p ON t.ticket_id=p.ticket_id AND t.aircraft_id=p.aircraft_id AND t.flight_number=p.flight_number WHERE p.username=?";
+				str = "SELECT * FROM ticket JOIN purchased USING(ticket_id) WHERE p.username=?";
+				ps = con.prepareStatement(str);
+				ps.setString(1,input);
 			}
 			else {
 				str = "SELECT * FROM ticket";
 				out.println("Bad reservationsBy");				
+				ps = con.prepareStatement(str);
+				ps.setString(1,input);
 			}
 
-			PreparedStatement ps = con.prepareStatement(str);
-			ps.setString(1,input);
 
 			ResultSet result = ps.executeQuery();
 			
@@ -49,25 +59,20 @@
 			out.print("<tr>");
 			//print out column header
 			out.print("<td>ticket_id</td>");
-			out.print("<td>airline_id</td>");
-			out.print("<td>aircraft_id</td>");
-			out.print("<td>depart_from_airport_id</td>");
-			out.print("<td>arrive_at_airport_id</td>");
-			out.print("<td>flight_number</td>");
+			out.print("<td>initial_departure_airport_id</td>");
+			out.print("<td>final_arrival_airport_id</td>");
 			out.print("<td>type_one_way_or_round_trip</td>");
 			out.print("<td>type_domestic_or_international</td>");
-			out.print("<td>departure_date</td>");
-			out.print("<td>departure_time</td>");
+			out.print("<td>number_of_stops</td>");
+			out.print("<td>flight_duration</td>");
 			out.print("<td>purchase_date</td>");
 			out.print("<td>purchase_time</td>");
-			out.print("<td>total_fare</td>");
+			out.print("<td>departure_date</td>");
+			out.print("<td>departure_time</td>");
+			out.print("<td>arrival_date</td>");
+			out.print("<td>arrival_time</td>");
 			out.print("<td>booking_fee</td>");
 			out.print("<td>cancellation_fee</td>");
-			out.print("<td>was_cancelled</td>");
-			out.print("<td>flight_duration</td>");
-			out.print("<td>arrival_time</td>");
-			out.print("<td>arrival_date</td>");
-			out.print("<td>seat_number</td>");
 			out.print("</tr>");
 			
 			//parse out the results
@@ -76,25 +81,20 @@
 				out.print("<tr>");
 				//make a column
 				out.print("<td>"+result.getString("ticket_id")+"</td>");
-				out.print("<td>"+result.getString("airline_id")+"</td>");
-				out.print("<td>"+result.getString("aircraft_id")+"</td>");
-				out.print("<td>"+result.getString("depart_from_airport_id")+"</td>");
-				out.print("<td>"+result.getString("arrive_at_airport_id")+"</td>");
-				out.print("<td>"+result.getString("flight_number")+"</td>");
+				out.print("<td>"+result.getString("initial_departure_airport_id")+"</td>");
+				out.print("<td>"+result.getString("final_arrival_airport_id")+"</td>");
 				out.print("<td>"+result.getString("type_one_way_or_round_trip")+"</td>");
 				out.print("<td>"+result.getString("type_domestic_or_international")+"</td>");
-				out.print("<td>"+result.getString("departure_date")+"</td>");
-				out.print("<td>"+result.getString("departure_time")+"</td>");
+				out.print("<td>"+result.getString("number_of_stops")+"</td>");
+				out.print("<td>"+result.getString("flight_duration")+"</td>");
 				out.print("<td>"+result.getString("purchase_date")+"</td>");
 				out.print("<td>"+result.getString("purchase_time")+"</td>");
-				out.print("<td>"+result.getString("total_fare")+"</td>");
+				out.print("<td>"+result.getString("departure_date")+"</td>");
+				out.print("<td>"+result.getString("departure_time")+"</td>");
+				out.print("<td>"+result.getString("arrival_date")+"</td>");
+				out.print("<td>"+result.getString("arrival_time")+"</td>");
 				out.print("<td>"+result.getString("booking_fee")+"</td>");
 				out.print("<td>"+result.getString("cancellation_fee")+"</td>");
-				out.print("<td>"+result.getString("was_cancelled")+"</td>");
-				out.print("<td>"+result.getString("flight_duration")+"</td>");
-				out.print("<td>"+result.getString("arrival_time")+"</td>");
-				out.print("<td>"+result.getString("arrival_date")+"</td>");
-				out.print("<td>"+result.getString("seat_number")+"</td>");
 				out.print("</tr>");
 			}
 			out.print("</table>");

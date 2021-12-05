@@ -71,6 +71,9 @@
 				<tr>    
 					<td>Input</td><td><input type="text" name="input"></td>
 				</tr>
+				<tr>    
+					<td>Airline (if for flight)</td><td><input type="text" name="input2"></td>
+				</tr>
 			</table>
 			<input type="submit" value="Submit">
 		</form>

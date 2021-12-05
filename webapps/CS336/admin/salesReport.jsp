@@ -23,14 +23,14 @@
 			%>
 		</h1>
 		<h2>
-			All tickets sold
+			All tickets sold/cancelled
 		</h2>
 		<%
 			ApplicationDB db = new ApplicationDB();
 			Connection con = db.getConnection();
 
             Statement stmt = con.createStatement();
-			String str = "SELECT booking_fee FROM ticket WHERE MONTH(purchase_date)=? and YEAR(purchase_date)=?";
+			String str = "SELECT ticket_id,((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket WHERE MONTH(purchase_date)=? AND YEAR(purchase_date)=?";
 			PreparedStatement ps = con.prepareStatement(str);
 
 			ps.setString(1,month);

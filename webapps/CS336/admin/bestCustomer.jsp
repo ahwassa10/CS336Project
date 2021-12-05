@@ -20,7 +20,7 @@
 			Connection con = db.getConnection();
 
             Statement stmt = con.createStatement();
-			String str = "SELECT username,SUM((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket t JOIN purchased p ON t.ticket_id=p.ticket_id AND t.aircraft_id=p.aircraft_id AND t.flight_number=p.flight_number GROUP BY username ORDER BY revenue DESC";
+			String str = "SELECT username,SUM((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket JOIN purchased USING(ticket_id) GROUP BY username ORDER BY revenue DESC";
 
 			ResultSet result = stmt.executeQuery(str);
 			if(result.next()) {
@@ -34,7 +34,7 @@
 				out.print(result2.getString("first_name")+" "+result2.getString("last_name"));
 			}
 			else {
-				out.print("not found");
+				out.print("no one :(");
 			}
 		%>
 </body>

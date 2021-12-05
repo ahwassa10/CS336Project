@@ -20,7 +20,7 @@
 			Connection con = db.getConnection();
 
             Statement stmt = con.createStatement();
-			String str = "SELECT flight_number,airline_id,aircraft_id,COUNT(*) tickets_sold FROM ticket GROUP BY airline_id,aircraft_id,flight_number ORDER BY tickets_sold DESC";
+			String str = "SELECT flight_number,airline_id,COUNT(*) tickets_sold FROM ticket GROUP BY airline_id,flight_number ORDER BY tickets_sold DESC";
 
 			ResultSet result = stmt.executeQuery(str);
 			
@@ -35,9 +35,6 @@
 			//make a column
 			out.print("<td>");
 			out.print("airline_id");
-			out.print("</td>");
-			out.print("<td>");
-			out.print("aircraft_id");
 			out.print("</td>");
 			out.print("<td>");
 			out.print("tickets_sold");
@@ -55,9 +52,6 @@
 				out.print("</td>");
 				out.print("<td>");
 				out.print(result.getString("airline_id"));
-				out.print("</td>");
-				out.print("<td>");
-				out.print(result.getString("aircraft_id"));
 				out.print("</td>");
 				out.print("<td>");
 				out.print(result.getString("tickets_sold"));
