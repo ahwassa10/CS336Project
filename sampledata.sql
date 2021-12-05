@@ -69,26 +69,26 @@ INSERT INTO associated VALUES("B6", "DEL");
 INSERT INTO associated VALUES("DL", "DEL");
 
 
-INSERT INTO aircraftowned VALUES("UA", "Aircraft01", "3");
-INSERT INTO aircraftowned VALUES("UA", "Aircraft02", "3");
-INSERT INTO aircraftowned VALUES("UA", "Aircraft03", "3");
-INSERT INTO aircraftowned VALUES("NK", "Aircraft04", "3");
-INSERT INTO aircraftowned VALUES("NK", "Aircraft05", "3");
-INSERT INTO aircraftowned VALUES("NK", "Aircraft06", "3");
-INSERT INTO aircraftowned VALUES("DL", "Aircraft07", "3");
-INSERT INTO aircraftowned VALUES("DL", "Aircraft08", "2");
-INSERT INTO aircraftowned VALUES("B6", "Aircraft09", "2");
-INSERT INTO aircraftowned VALUES("B6", "Aircraft10", "3");
-INSERT INTO aircraftowned VALUES("ET", "Aircraft11", "3");
-INSERT INTO aircraftowned VALUES("F9", "Aircraft12", "3");
-INSERT INTO aircraftowned VALUES("AS", "Aircraft13", "3");
-INSERT INTO aircraftowned VALUES("SQ", "Aircraft14", "3");
-INSERT INTO aircraftowned VALUES("SQ", "Aircraft15", "3");
-INSERT INTO aircraftowned VALUES("SQ", "Aircraft16", "3");
-INSERT INTO aircraftowned VALUES("SQ", "Aircraft17", "3");
-INSERT INTO aircraftowned VALUES("UA", "Aircraft18", "3");
-INSERT INTO aircraftowned VALUES("UA", "Aircraft19", "3");
-INSERT INTO aircraftowned VALUES("UA", "Aircraft20", "3");
+INSERT INTO aircraftOwned VALUES("UA", "Aircraft01", "3");
+INSERT INTO aircraftOwned VALUES("UA", "Aircraft02", "3");
+INSERT INTO aircraftOwned VALUES("UA", "Aircraft03", "3");
+INSERT INTO aircraftOwned VALUES("NK", "Aircraft04", "3");
+INSERT INTO aircraftOwned VALUES("NK", "Aircraft05", "3");
+INSERT INTO aircraftOwned VALUES("NK", "Aircraft06", "3");
+INSERT INTO aircraftOwned VALUES("DL", "Aircraft07", "3");
+INSERT INTO aircraftOwned VALUES("DL", "Aircraft08", "2");
+INSERT INTO aircraftOwned VALUES("B6", "Aircraft09", "2");
+INSERT INTO aircraftOwned VALUES("B6", "Aircraft10", "3");
+INSERT INTO aircraftOwned VALUES("ET", "Aircraft11", "3");
+INSERT INTO aircraftOwned VALUES("F9", "Aircraft12", "3");
+INSERT INTO aircraftOwned VALUES("AS", "Aircraft13", "3");
+INSERT INTO aircraftOwned VALUES("SQ", "Aircraft14", "3");
+INSERT INTO aircraftOwned VALUES("SQ", "Aircraft15", "3");
+INSERT INTO aircraftOwned VALUES("SQ", "Aircraft16", "3");
+INSERT INTO aircraftOwned VALUES("SQ", "Aircraft17", "3");
+INSERT INTO aircraftOwned VALUES("UA", "Aircraft18", "3");
+INSERT INTO aircraftOwned VALUES("UA", "Aircraft19", "3");
+INSERT INTO aircraftOwned VALUES("UA", "Aircraft20", "3");
 
 INSERT INTO user VALUES("Customer1", "10", "Bob", "Smith", "customer");
 INSERT INTO user VALUES("Customer2", "20", "Bruce", "Doe", "customer");
@@ -121,13 +121,13 @@ INSERT INTO flightOperated VALUES("SQ", "0008", "Aircraft14", "HKG", "JFK", "bus
 -- SQ DOES NOT GO FROM HKG SIN JFK OR LAX TO EWR
 -- we have associated for: EWR, LAX, HKG, SIN, JFK
 
-INSERT INTO operateson VALUES("UA", "Aircraft02", "Monday");
-INSERT INTO operateson VALUES("NK", "Aircraft04", "Tuesday");
-INSERT INTO operateson VALUES("NK", "Aircraft06", "Wednesday");
-INSERT INTO operateson VALUES("DL", "Aircraft08", "Thursday");
-INSERT INTO operateson VALUES("B6", "Aircraft10", "Friday");
-INSERT INTO operateson VALUES("F9", "Aircraft12", "Saturday");
-INSERT INTO operateson VALUES("SQ", "Aircraft14", "Sunday");
+INSERT INTO operatesOn VALUES("UA", "Aircraft02", "Monday");
+INSERT INTO operatesOn VALUES("NK", "Aircraft04", "Tuesday");
+INSERT INTO operatesOn VALUES("NK", "Aircraft06", "Wednesday");
+INSERT INTO operatesOn VALUES("DL", "Aircraft08", "Thursday");
+INSERT INTO operatesOn VALUES("B6", "Aircraft10", "Friday");
+INSERT INTO operatesOn VALUES("F9", "Aircraft12", "Saturday");
+INSERT INTO operatesOn VALUES("SQ", "Aircraft14", "Sunday");
 
 
 
