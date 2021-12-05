@@ -74,8 +74,15 @@
 		<button type="submit">Submit</button>
 	</form>
 	
-
-
+	<hr>
+	<h1>Post a Question</h1>
+	<form action="qaAddQuestion.jsp" method="get">
+		<label>Input your Question:</label>
+		<br>
+		<textarea name="question" rows="8" cols="32" maxlength="255"></textarea>
+		<br>
+		<button type="submit">Submit Question</button>
+	</form>
 
 </body>
 
