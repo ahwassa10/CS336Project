@@ -9,7 +9,7 @@ CREATE TABLE airport (airport_id varchar(10) NOT NULL,
 
 
 CREATE TABLE airline (airline_id    varchar(10) NOT NULL,
-                      airline_name  varchar(20);
+                      airline_name  varchar(50),
                       PRIMARY KEY(airline_id));
 
 
@@ -46,13 +46,13 @@ CREATE TABLE flightOperated (airline_id             varchar(10) NOT NULL,
                              aircraft_id            varchar(10) NOT NULL,
                              depart_from_airport_id varchar(10) NOT NULL,
                              arrive_at_airport_id   varchar(10) NOT NULL,
-                             ticket_class           varchar(10),
+                             ticket_class           ENUM('first', 'economy', 'business'),
                              flight_fare            int,
                              departure_data         DATE,
                              departure_time         TIME,
                              arrival_data           DATE,
                              arrival_time           TIME,
-                             type_domestic_or_international BOOL,
+                             is_international       BOOL,
                              seats_available        int,
                              PRIMARY KEY(airline_id,
                                          flight_number),

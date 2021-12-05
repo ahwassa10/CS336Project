@@ -6,88 +6,89 @@ INSERT INTO airport VALUES("HKG", "Hong Kong", "1 Sky Plaza Rd, Chek Lap Kok", "
 INSERT INTO airport VALUES("DEL", "India", "New Delhi, Delhi 110037", "Indira Gandhi International Airport");
 INSERT INTO airport VALUES("MCO", "USA", "1 Jeff Fuqua Blvd, Orlando, FL 32827", "Orlando International Airport");
 
-INSERT INTO airline VALUES("United");
-INSERT INTO airline VALUES("Spirit");
-INSERT INTO airline VALUES("Delta");
-INSERT INTO airline VALUES("Jet Blue");
-INSERT INTO airline VALUES("EthiopiaAL");
-INSERT INTO airline VALUES("Frontier");
-INSERT INTO airline VALUES("AlaskaAL");
-INSERT INTO airline VALUES("SingaporAL");
+INSERT INTO airline VALUES("UA", "United Airlines");
+INSERT INTO airline VALUES("AA", "American Airlines");
+INSERT INTO airline VALUES("NK", "Spirit Airlines");
+INSERT INTO airline VALUES("DL", "Delta Airlines");
+INSERT INTO airline VALUES("B6", "JetBlue Airways");
+INSERT INTO airline VALUES("ET", "Ethiopian Airlines");
+INSERT INTO airline VALUES("F9", "Frontier Airlines");
+INSERT INTO airline VALUES("AS", "Alaska Airlines");
+INSERT INTO airline VALUES("SQ", "Singapore Airlines");
 
-INSERT INTO associated VALUES("United", "EWR");
-INSERT INTO associated VALUES("Spirit", "EWR");
-INSERT INTO associated VALUES("Delta", "EWR");
-INSERT INTO associated VALUES("Jet Blue", "EWR");
-INSERT INTO associated VALUES("Frontier", "EWR");
-INSERT INTO associated VALUES("AlaskaAL", "EWR");
+INSERT INTO associated VALUES("UA", "EWR");
+INSERT INTO associated VALUES("NK", "EWR");
+INSERT INTO associated VALUES("DL", "EWR");
+INSERT INTO associated VALUES("B6", "EWR");
+INSERT INTO associated VALUES("F9", "EWR");
+INSERT INTO associated VALUES("AS", "EWR");
 
-INSERT INTO associated VALUES("United", "MCO");
-INSERT INTO associated VALUES("Spirit", "MCO");
-INSERT INTO associated VALUES("Delta", "MCO");
-INSERT INTO associated VALUES("Jet Blue", "MCO");
-INSERT INTO associated VALUES("Frontier", "MCO");
-INSERT INTO associated VALUES("AlaskaAL", "MCO");
-INSERT INTO associated VALUES("SingaporAL", "MCO");
+INSERT INTO associated VALUES("UA", "MCO");
+INSERT INTO associated VALUES("NK", "MCO");
+INSERT INTO associated VALUES("DL", "MCO");
+INSERT INTO associated VALUES("B6", "MCO");
+INSERT INTO associated VALUES("F9", "MCO");
+INSERT INTO associated VALUES("AS", "MCO");
+INSERT INTO associated VALUES("SQ", "MCO");
 
-INSERT INTO associated VALUES("United", "SIN");
-INSERT INTO associated VALUES("Spirit", "SIN");
-INSERT INTO associated VALUES("Delta", "SIN");
-INSERT INTO associated VALUES("Jet Blue", "SIN");
-INSERT INTO associated VALUES("Frontier", "SIN");
-INSERT INTO associated VALUES("AlaskaAL", "SIN");
-INSERT INTO associated VALUES("SingaporAL", "SIN");
+INSERT INTO associated VALUES("UA", "SIN");
+INSERT INTO associated VALUES("NK", "SIN");
+INSERT INTO associated VALUES("DL", "SIN");
+INSERT INTO associated VALUES("B6", "SIN");
+INSERT INTO associated VALUES("F9", "SIN");
+INSERT INTO associated VALUES("AS", "SIN");
+INSERT INTO associated VALUES("SQ", "SIN");
 
-INSERT INTO associated VALUES("United", "HKG");
-INSERT INTO associated VALUES("Spirit", "HKG");
-INSERT INTO associated VALUES("Delta", "HKG");
-INSERT INTO associated VALUES("Jet Blue", "HKG");
-INSERT INTO associated VALUES("Frontier", "HKG");
-INSERT INTO associated VALUES("AlaskaAL", "HKG");
-INSERT INTO associated VALUES("SingaporAL", "HKG");
+INSERT INTO associated VALUES("UA", "HKG");
+INSERT INTO associated VALUES("NK", "HKG");
+INSERT INTO associated VALUES("DL", "HKG");
+INSERT INTO associated VALUES("B6", "HKG");
+INSERT INTO associated VALUES("F9", "HKG");
+INSERT INTO associated VALUES("AS", "HKG");
+INSERT INTO associated VALUES("SQ", "HKG");
 
-INSERT INTO associated VALUES("United", "JFK");
-INSERT INTO associated VALUES("Spirit", "JFK");
-INSERT INTO associated VALUES("Delta", "JFK");
-INSERT INTO associated VALUES("Jet Blue", "JFK");
-INSERT INTO associated VALUES("EthiopiaAL", "JFK");
-INSERT INTO associated VALUES("Frontier", "JFK");
-INSERT INTO associated VALUES("AlaskaAL", "JFK");
-INSERT INTO associated VALUES("SingaporAL", "JFK");
+INSERT INTO associated VALUES("UA", "JFK");
+INSERT INTO associated VALUES("NK", "JFK");
+INSERT INTO associated VALUES("DL", "JFK");
+INSERT INTO associated VALUES("B6", "JFK");
+INSERT INTO associated VALUES("ET", "JFK");
+INSERT INTO associated VALUES("F9", "JFK");
+INSERT INTO associated VALUES("AS", "JFK");
+INSERT INTO associated VALUES("SQ", "JFK");
 
-INSERT INTO associated VALUES("United", "LAX");
-INSERT INTO associated VALUES("Spirit", "LAX");
-INSERT INTO associated VALUES("Jet Blue", "LAX");
-INSERT INTO associated VALUES("Delta", "LAX");
-INSERT INTO associated VALUES("EthiopiaAL", "LAX");
-INSERT INTO associated VALUES("AlaskaAL", "LAX");
-INSERT INTO associated VALUES("SingaporAL", "LAX");
+INSERT INTO associated VALUES("UA", "LAX");
+INSERT INTO associated VALUES("NK", "LAX");
+INSERT INTO associated VALUES("B6", "LAX");
+INSERT INTO associated VALUES("DL", "LAX");
+INSERT INTO associated VALUES("ET", "LAX");
+INSERT INTO associated VALUES("AS", "LAX");
+INSERT INTO associated VALUES("SQ", "LAX");
 
-INSERT INTO associated VALUES("Spirit", "DEL");
-INSERT INTO associated VALUES("Jet Blue", "DEL");
-INSERT INTO associated VALUES("Delta", "DEL");
+INSERT INTO associated VALUES("NK", "DEL");
+INSERT INTO associated VALUES("B6", "DEL");
+INSERT INTO associated VALUES("DL", "DEL");
 
 
-INSERT INTO aircraftowned VALUES("United", "Aircraft01", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft02", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft03", "3");
-INSERT INTO aircraftowned VALUES("Spirit", "Aircraft04", "3");
-INSERT INTO aircraftowned VALUES("Spirit", "Aircraft05", "3");
-INSERT INTO aircraftowned VALUES("Spirit", "Aircraft06", "3");
-INSERT INTO aircraftowned VALUES("Delta", "Aircraft07", "3");
-INSERT INTO aircraftowned VALUES("Delta", "Aircraft08", "2");
-INSERT INTO aircraftowned VALUES("Jet Blue", "Aircraft09", "2");
-INSERT INTO aircraftowned VALUES("Jet Blue", "Aircraft10", "3");
-INSERT INTO aircraftowned VALUES("EthiopiaAL", "Aircraft11", "3");
-INSERT INTO aircraftowned VALUES("Frontier", "Aircraft12", "3");
-INSERT INTO aircraftowned VALUES("AlaskaAL", "Aircraft13", "3");
-INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft14", "3");
-INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft15", "3");
-INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft16", "3");
-INSERT INTO aircraftowned VALUES("SingaporAL", "Aircraft17", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft18", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft19", "3");
-INSERT INTO aircraftowned VALUES("United", "Aircraft20", "3");
+INSERT INTO aircraftowned VALUES("UA", "Aircraft01", "3");
+INSERT INTO aircraftowned VALUES("UA", "Aircraft02", "3");
+INSERT INTO aircraftowned VALUES("UA", "Aircraft03", "3");
+INSERT INTO aircraftowned VALUES("NK", "Aircraft04", "3");
+INSERT INTO aircraftowned VALUES("NK", "Aircraft05", "3");
+INSERT INTO aircraftowned VALUES("NK", "Aircraft06", "3");
+INSERT INTO aircraftowned VALUES("DL", "Aircraft07", "3");
+INSERT INTO aircraftowned VALUES("DL", "Aircraft08", "2");
+INSERT INTO aircraftowned VALUES("B6", "Aircraft09", "2");
+INSERT INTO aircraftowned VALUES("B6", "Aircraft10", "3");
+INSERT INTO aircraftowned VALUES("ET", "Aircraft11", "3");
+INSERT INTO aircraftowned VALUES("F9", "Aircraft12", "3");
+INSERT INTO aircraftowned VALUES("AS", "Aircraft13", "3");
+INSERT INTO aircraftowned VALUES("SQ", "Aircraft14", "3");
+INSERT INTO aircraftowned VALUES("SQ", "Aircraft15", "3");
+INSERT INTO aircraftowned VALUES("SQ", "Aircraft16", "3");
+INSERT INTO aircraftowned VALUES("SQ", "Aircraft17", "3");
+INSERT INTO aircraftowned VALUES("UA", "Aircraft18", "3");
+INSERT INTO aircraftowned VALUES("UA", "Aircraft19", "3");
+INSERT INTO aircraftowned VALUES("UA", "Aircraft20", "3");
 
 INSERT INTO user VALUES("Customer1", "10", "Bob", "Smith", "customer");
 INSERT INTO user VALUES("Customer2", "20", "Bruce", "Doe", "customer");
@@ -105,42 +106,28 @@ INSERT INTO user VALUES("rep2", "2468", "represent", "ative", "representative");
 -- I commented out the administrator and rep because we already make them in the main Schema. 
 -- They're only here for easy reference.
 
-INSERT INTO flightOperated VALUES("United"
-INSERT INTO flightOperated VALUES("United", "Aircraft01", "EWR", "LAX", "0001", "2021-12-03", "10:00", "2021-12-03", "16:00", "0", "1");
-INSERT INTO flightOperated VALUES("United", "Aircraft02", "LAX", "JFK", "0002", "2021-12-04", "12:00", "2021-12-04", "18:00", "0", "2");
-INSERT INTO flightOperated VALUES("Spirit", "Aircraft04", "EWR", "JFK", "0003", "2021-12-05", "14:00", "2021-12-05", "18:00", "0", "3");
-INSERT INTO flightOperated VALUES("Spirit", "Aircraft06", "EWR", "MCO", "0004", "2021-12-06", "16:00", "2021-12-06", "19:00", "0", "1");
-INSERT INTO flightOperated VALUES("Delta", "Aircraft08", "DEL", "HKG", "0005", "2021-12-20", "18:00", "2021-12-21", "1:00", "1", "2");
-INSERT INTO flightOperated VALUES("Jet Blue", "Aircraft10", "MCO", "SIN", "0006", "2021-12-19", "16:00", "2021-12-20", "22:00", "1", "3");
-INSERT INTO flightOperated VALUES("Frontier", "Aircraft12", "SIN", "HKG", "0007", "2021-12-18", "12:00", "2021-12-18", "16:00", "1", "1");
-INSERT INTO flightOperated VALUES("SingaporAL", "Aircraft14", "HKG", "JFK", "0008", "2021-12-06", "18:00", "2021-12-07", "14:00", "1", "2");
+INSERT INTO flightOperated VALUES("UA", "0001", "Aircraft01", "EWR", "LAX", "first", 800, "2021-12-03", "10:00", "2021-12-03", "16:00", 0, 3);
+INSERT INTO flightOperated VALUES("UA", "0002", "Aircraft02", "LAX", "JFK", "business", 1000, "2021-12-04", "12:00", "2021-12-04", "18:00", 0, 3);
+INSERT INTO flightOperated VALUES("NK", "0003", "Aircraft04", "EWR", "JFK", "first", 900, "2021-12-05", "14:00", "2021-12-05", "18:00", 0, 3);
+INSERT INTO flightOperated VALUES("NK", "0004", "Aircraft06", "EWR", "MCO", "economy", 500, "2021-12-06", "16:00", "2021-12-06", "19:00", 0, 3);
+INSERT INTO flightOperated VALUES("DL", "0005", "Aircraft08", "DEL", "HKG", "economy", 700, "2021-12-20", "18:00", "2021-12-21", "1:00", 1, 2);
+INSERT INTO flightOperated VALUES("B6", "0006", "Aircraft10", "MCO", "SIN", "business", 1200, "2021-12-19", "16:00", "2021-12-20", "22:00", 1, 3);
+INSERT INTO flightOperated VALUES("F9", "0007", "Aircraft12", "SIN", "HKG", "first", 800, "2021-12-18", "12:00", "2021-12-18", "16:00", 1, 3);
+INSERT INTO flightOperated VALUES("SQ", "0008", "Aircraft14", "HKG", "JFK", "business", 1500, "2021-12-06", "18:00", "2021-12-07", "14:00", 1, 3);
 
 -- ignore the below
 -- FRONTIER DOES NOT GO TO LAX FROM JFK EWR SIN OR HKG
 -- ETHIOPIA AL DOES NOT GO FROM JFK OR LAX TO EWR OR HKG OR SIN
--- SINGAPORAL DOES NOT GO FROM HKG SIN JFK OR LAX TO EWR
+-- SQ DOES NOT GO FROM HKG SIN JFK OR LAX TO EWR
 -- we have associated for: EWR, LAX, HKG, SIN, JFK
 
-INSERT INTO operateson VALUES("United", "Aircraft02", "Monday");
-INSERT INTO operateson VALUES("Spirit", "Aircraft04", "Tuesday");
-INSERT INTO operateson VALUES("Spirit", "Aircraft06", "Wednesday");
-INSERT INTO operateson VALUES("Delta", "Aircraft08", "Thursday");
-INSERT INTO operateson VALUES("Jet Blue", "Aircraft10", "Friday");
-INSERT INTO operateson VALUES("Frontier", "Aircraft12", "Saturday");
-INSERT INTO operateson VALUES("SingaporAL", "Aircraft14", "Sunday");
-
-
-INSERT INTO waitlist VALUES("United", "Aircraft01", "EWR", "LAX", "0001", "Customer1", "1");
-INSERT INTO waitlist VALUES("United", "Aircraft01", "EWR", "LAX", "0001", "Customer2", "2");
-
-INSERT INTO waitlist VALUES("Spirit", "Aircraft04", "EWR", "JFK", "0003", "Customer3", "1");
-
-INSERT INTO waitlist VALUES("Jet Blue", "Aircraft10", "MCO", "SIN", "0006", "Customer1", "1");
-INSERT INTO waitlist VALUES("Jet Blue", "Aircraft10", "MCO", "SIN", "0006", "Customer5", "2");
-INSERT INTO waitlist VALUES("Jet Blue", "Aircraft10", "MCO", "SIN", "0006", "Customer6", "3");
-INSERT INTO waitlist VALUES("Jet Blue", "Aircraft10", "MCO", "SIN", "0006", "Customer7", "4");
-
-INSERT INTO waitlist VALUES("SingaporAL", "Aircraft14", "HKG", "JFK", "0008", "Customer4", "1");
+INSERT INTO operateson VALUES("UA", "Aircraft02", "Monday");
+INSERT INTO operateson VALUES("NK", "Aircraft04", "Tuesday");
+INSERT INTO operateson VALUES("NK", "Aircraft06", "Wednesday");
+INSERT INTO operateson VALUES("DL", "Aircraft08", "Thursday");
+INSERT INTO operateson VALUES("B6", "Aircraft10", "Friday");
+INSERT INTO operateson VALUES("F9", "Aircraft12", "Saturday");
+INSERT INTO operateson VALUES("SQ", "Aircraft14", "Sunday");
 
 
 
