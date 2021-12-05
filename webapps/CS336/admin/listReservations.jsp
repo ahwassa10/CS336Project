@@ -19,8 +19,9 @@
 				out.print(reservationsBy+" ");
 				String input = request.getParameter("input");
 				out.print(input);
+				String input2="";
 				if(input.equals("flight_number")) {
-					String input2 = request.getParameter("input2");
+					input2 = request.getParameter("input2");
 					out.print("airline_id "+input2);
 				}
 			%>
@@ -40,7 +41,7 @@
 				ps.setString(2,input2);
 			}
 			else if (reservationsBy.equals("name")) {
-				str = "SELECT * FROM ticket JOIN purchased USING(ticket_id) WHERE p.username=?";
+				str = "SELECT * FROM ticket JOIN purchased USING(ticket_id) WHERE username=?";
 				ps = con.prepareStatement(str);
 				ps.setString(1,input);
 			}
@@ -98,6 +99,7 @@
 				out.print("</tr>");
 			}
 			out.print("</table>");
+			con.close();
 		%>
 </body>
 </html>

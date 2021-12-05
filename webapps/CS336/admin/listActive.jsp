@@ -20,7 +20,7 @@
 			Connection con = db.getConnection();
 
             Statement stmt = con.createStatement();
-			String str = "SELECT flight_number,airline_id,COUNT(*) tickets_sold FROM ticket GROUP BY airline_id,flight_number ORDER BY tickets_sold DESC";
+			String str = "SELECT flight_number,airline_id,COUNT(*) tickets_sold FROM ticket JOIN parts USING(ticket_id) GROUP BY airline_id,flight_number ORDER BY tickets_sold DESC";
 
 			ResultSet result = stmt.executeQuery(str);
 			
@@ -59,6 +59,7 @@
 				out.print("</tr>");
 			}
 			out.print("</table>");
+			con.close();
 		%>
 </body>
 </html>

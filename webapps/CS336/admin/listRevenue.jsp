@@ -78,6 +78,7 @@
 				out.print("</tr>");
 			}
 			out.print("</table>");
+			con.close();
 		%>
 </body>
 </html>

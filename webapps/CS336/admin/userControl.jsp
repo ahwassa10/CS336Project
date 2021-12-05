@@ -150,7 +150,7 @@
 				<%
 			}
 			else out.println("Bad action");
-			
+			con.close();
 		%>
 <!--
 		Hello World1 <!__ the usual HTML way __>

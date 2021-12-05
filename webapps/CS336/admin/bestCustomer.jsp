@@ -36,6 +36,7 @@
 			else {
 				out.print("no one :(");
 			}
+			con.close();
 		%>
 </body>
 </html>

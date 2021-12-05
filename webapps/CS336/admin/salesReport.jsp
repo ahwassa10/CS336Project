@@ -30,7 +30,7 @@
 			Connection con = db.getConnection();
 
             Statement stmt = con.createStatement();
-			String str = "SELECT ticket_id,((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket WHERE MONTH(purchase_date)=? AND YEAR(purchase_date)=?";
+			String str = "SELECT ticket_id,((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket JOIN purchased USING(ticket_id) WHERE MONTH(purchase_date)=? AND YEAR(purchase_date)=?";
 			PreparedStatement ps = con.prepareStatement(str);
 
 			ps.setString(1,month);
@@ -50,6 +50,7 @@
 			else {
 				out.println("We sold "+count+" ticket(s) this month for $"+sum);
 			}
+			con.close();
 		%>
 </body>
 </html>

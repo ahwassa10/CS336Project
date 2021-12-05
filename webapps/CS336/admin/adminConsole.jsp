@@ -65,7 +65,7 @@
 		<form method="get" action="listReservations.jsp">
 			<select name="reservationsBy" size=1>
 				<option value="flight_number">Flight Number</option>
-				<option value="name">Customer Name</option>
+				<option value="name">Customer Username</option>
 			</select>&nbsp;<br>
 			<table>
 				<tr>    
