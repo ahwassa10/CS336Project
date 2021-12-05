@@ -93,4 +93,9 @@
 		<button type="submit">Go Back to Questions and Answers Page</button>
 	</form>
 </body>
+
+<%
+	// Close Database Connection
+	con.close();
+%>
 </html>

@@ -46,4 +46,8 @@
 		
 	</body>
 
+<%
+	// Close Database Connection
+	con.close();
+%>
 </html>
