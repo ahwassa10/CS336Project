@@ -11,6 +11,7 @@
 		<style>
 		table, th, td {
 			border: 1px solid black;
+			border-collapse: collapse;
 		}
 		
 		td#st1 {
@@ -53,6 +54,7 @@
 		<table>
 			<tr>
 				<th>Ticket ID</th>
+				<th>Show All Ticket Information</th>
 				<th>Initial Departure Airport</th>
 				<th>Final Arrival Airport</th>
 				<th>Number of Stops</th>
@@ -68,9 +70,13 @@
 				while(resultPast.next()) {
 					out.print("<tr>");
 					
-					//out.print("<form method=\"get\"><button type=\"submit\" formaction=\"deleteReservation.jsp\"></button></form>");
-					
 					out.print("<td>" + resultPast.getString("ticket_id") + "</td>");
+					
+					out.print("<td><form method=\"get\" action=\"getMoreInfo.jsp\">" +
+							  "<button type=\"submit\" name=\"ticket_id\" value=\"" + resultPast.getString("ticket_id") +
+							  "\">Show All Info</button>" +
+					          "</form></td>");
+					
 					out.print("<td>" + resultPast.getString("a.name") + "</td>");
 					out.print("<td>" + resultPast.getString("aa.name") + "</td>");
 					out.print("<td>" + resultPast.getString("t.number_of_stops") + "</td>");
@@ -100,6 +106,7 @@
 		<table>
 			<tr>
 				<th>Ticket ID</th>
+				<th>Show All Ticket Information</th>
 				<th>Initial Departure Airport</th>
 				<th>Final Arrival Airport</th>
 				<th>Number of Stops</th>
@@ -115,9 +122,13 @@
 				while(resultUpcoming.next()) {
 					out.print("<tr>");
 					
-					//out.print("<form method=\"get\"><button type=\"submit\" formaction=\"deleteReservation.jsp\"></button></form>");
-					
 					out.print("<td>" + resultUpcoming.getString("ticket_id") + "</td>");
+					
+					out.print("<td><form method=\"get\" action=\"getMoreInfo.jsp\">" +
+							  "<button type=\"submit\" name=\"ticket_id\" value=\"" + resultUpcoming.getString("ticket_id") +
+							  "\">Show All Info</button>" +
+					          "</form></td>");
+					
 					out.print("<td>" + resultUpcoming.getString("a.name") + "</td>");
 					out.print("<td>" + resultUpcoming.getString("aa.name") + "</td>");
 					out.print("<td>" + resultUpcoming.getString("t.number_of_stops") + "</td>");
