@@ -147,7 +147,23 @@ INSERT INTO ticket VALUES("001", "EWR", "LAX", "0", "0", "0", "6:00", "2021-11-2
 INSERT INTO ticket VALUES("002", "EWR", "LAX", "0", "0", "0", "6:00", "2021-11-20", "9:15", "2021-12-03", "10:00", "2021-12-03", "16:00", "150", "50");
 INSERT INTO ticket VALUES("003", "EWR", "LAX", "0", "0", "0", "6:00", "2021-11-20", "9:15", "2021-12-03", "10:00", "2021-12-03", "16:00", "150", "50");
 INSERT INTO ticket VALUES("004", "EWR", "LAX", "0", "0", "0", "6:00", "2021-11-20", "9:15", "2021-12-03", "10:00", "2021-12-03", "16:00", "150", "50");
+INSERT INTO ticket VALUES("005", "MCO", "SIN", "1", "1", "1", "26:00", "2021-12-20", "5:15", "2021-12-19", "16:00", "2021-12-20", "22:00", "500", "100");
 
+
+
+INSERT INTO purchased VALUES("001", "Customer8", "0");
+INSERT INTO purchased VALUES("002", "Customer7", "0");
+INSERT INTO purchased VALUES("003", "Customer6", "0");
+INSERT INTO purchased VALUES("004", "Customer5", "0");
+INSERT INTO purchased VALUES("005", "Customer4", "0");
+
+INSERT INTO parts VALUES("005", "B6", "0006", "20");
+
+INSERT INTO question VALUES("What day is flight 0008?", "2021-12-06", "Customer1");
+INSERT INTO question VALUES("What time is flight 0001?", "10:00", "Customer2");
+INSERT INTO question VALUES("Where does flight 0002 land?", "JFK Airport", "Customer3");
+INSERT INTO question VALUES("What is EWR's address?", "", "Customer4");
+INSERT INTO question VALUES("Where does flight 0006 land?", "", "Customer5");
 
 
 
