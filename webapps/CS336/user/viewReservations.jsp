@@ -57,12 +57,9 @@
 				<th>Final Arrival Airport</th>
 				<th>Number of Stops</th>
 				<th>Flight Duration</th>
-				<th>Purchase Date</th>
-				<th>Purchase Time</th>
-				<th>Departure Date</th>
-				<th>Departure Time</th>
-				<th>Arrival Date</th>
-				<th>Arrival Time</th>
+				<th>Purchase Date/Time</th>
+				<th>Departure Date/Time</th>
+				<th>Arrival Date/Time</th>
 				<th>Was Cancelled</th>
 				<th>Cancellation Fee</th>
 			</tr>
@@ -78,12 +75,12 @@
 					out.print("<td>" + resultPast.getString("aa.name") + "</td>");
 					out.print("<td>" + resultPast.getString("t.number_of_stops") + "</td>");
 					out.print("<td>" + resultPast.getString("t.flight_duration") + "</td>");
-					out.print("<td>" + resultPast.getString("t.purchase_date") + "</td>");
-					out.print("<td>" + resultPast.getString("t.purchase_time") + "</td>");
-					out.print("<td>" + resultPast.getString("t.departure_date") + "</td>");
-					out.print("<td>" + resultPast.getString("t.departure_time") + "</td>");
-					out.print("<td>" + resultPast.getString("t.arrival_date") + "</td>");
-					out.print("<td>" + resultPast.getString("t.arrival_time") + "</td>");
+					out.print("<td>" + resultPast.getString("t.purchase_date") + " " +
+									   resultPast.getString("t.purchase_time") + "</td>");
+					out.print("<td>" + resultPast.getString("t.departure_date") + " " +
+									   resultPast.getString("t.departure_time") + "</td>");
+					out.print("<td>" + resultPast.getString("t.arrival_date") + " " +
+									   resultPast.getString("t.arrival_time") + "</td>");
 					
 					String cancelled = resultPast.getString("p.was_cancelled");
 					if (cancelled.equals("1")) {
@@ -107,13 +104,10 @@
 				<th>Final Arrival Airport</th>
 				<th>Number of Stops</th>
 				<th>Flight Duration</th>
-				<th>Purchase Date</th>
-				<th>Purchase Time</th>
-				<th>Departure Date</th>
-				<th>Departure Time</th>
-				<th>Arrival Date</th>
-				<th>Arrival Time</th>
-				<td>Was Cancelled</td>
+				<th>Purchase Date/Time</th>
+				<th>Departure Date/Time</th>
+				<th>Arrival Date/Time</th>
+				<th>Was Cancelled</th>
 				<th>Cancellation Fee</th>
 			</tr>
 			
@@ -128,12 +122,12 @@
 					out.print("<td>" + resultUpcoming.getString("aa.name") + "</td>");
 					out.print("<td>" + resultUpcoming.getString("t.number_of_stops") + "</td>");
 					out.print("<td>" + resultUpcoming.getString("t.flight_duration") + "</td>");
-					out.print("<td>" + resultUpcoming.getString("t.purchase_date") + "</td>");
-					out.print("<td>" + resultUpcoming.getString("t.purchase_time") + "</td>");
-					out.print("<td>" + resultUpcoming.getString("t.departure_date") + "</td>");
-					out.print("<td>" + resultUpcoming.getString("t.departure_time") + "</td>");
-					out.print("<td>" + resultUpcoming.getString("t.arrival_date") + "</td>");
-					out.print("<td>" + resultUpcoming.getString("t.arrival_time") + "</td>");
+					out.print("<td>" + resultUpcoming.getString("t.purchase_date") + " " +
+					                   resultUpcoming.getString("t.purchase_time") + "</td>");
+					out.print("<td>" + resultUpcoming.getString("t.departure_date") + " " +
+					                   resultUpcoming.getString("t.departure_time") + "</td>");
+					out.print("<td>" + resultUpcoming.getString("t.arrival_date") + " " +
+					                   resultUpcoming.getString("t.arrival_time") + "</td>");
 					
 					String cancelled = resultUpcoming.getString("p.was_cancelled");
 					if (cancelled.equals("1")) {
