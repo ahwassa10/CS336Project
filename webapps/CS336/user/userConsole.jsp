@@ -14,20 +14,21 @@
 		
 		<p>What would you like to do?</p>
 		
-		<form method="get" action="Search.jsp">
-			<button type="submit">Browse Flights</button>
-		</form>
-		
-		<form method="get" action="qa.jsp">
-			<button type="submit">Browse Questions and Answers</button>
-		</form>
-		
-		<form method="get" action="viewReservations.jsp">
-			<button type="submit">Browse Your Reservations</button>
-		</form>
-
-		<form method="get" action="../Homepage.jsp">
-			<button type="submit">Logout</button>
+		<form method="get">
+			<button type="submit" formaction="Search.jsp">Search for a Flight</button>
+			<br>
+			
+			<button type="submit" formaction="browseTickets.jsp">View all Tickets and Make Reservations</button>
+			<br>
+			
+			<button type="submit" formaction="viewReservations.jsp">Manage your Reservations</button>
+			<br>
+			
+			<button type="submit" formaction="qa.jsp">Manage Questions and Answers</button>
+			<br>
+			
+			<button type="submit" formaction="../Homepage.jsp">Logout</button>
+			<br>
 		</form>
 			
 	</body>

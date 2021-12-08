@@ -6,17 +6,12 @@
 <!DOCTYPE html>
 
 <%
-/*
-select al.airline_name, fo.flight_number, fo.aircraft_id, ap.name depart_from , app.name arrive_at, fo.ticket_class, fo.flight_fare, fo.departure_date, fo.departure_time, fo.arrival_date, fo.arrival_time, fo.is_international, fo.seats_available
-from flightOperated fo, airline al, airport ap, airport app
-where fo.airline_id = al.airline_id and fo.depart_from_airport_id like ap.airport_id and fo.arrive_at_airport_id like app.airport_id;
-*/
 // Initialize the Database Connection
 	ApplicationDB db = new ApplicationDB();
 	Connection con = db.getConnection();
 	
 	String queryAllFlights = "select al.airline_name, fo.flight_number, fo.aircraft_id, ap.name depart_from , app.name arrive_at, " +
-	                         	"fo.ticket_class, fo.flight_fare, fo.departure_date, fo.departure_time, fo.arrival_date, " +
+	                         	"fo.departure_date, fo.departure_time, fo.arrival_date, " +
 	                         	"fo.arrival_time, fo.is_international, fo.seats_available " +
 							 "from flightOperated fo, airline al, airport ap, airport app " +
 							 "where fo.airline_id = al.airline_id and fo.depart_from_airport_id like ap.airport_id " +
@@ -87,8 +82,6 @@ where fo.airline_id = al.airline_id and fo.depart_from_airport_id like ap.airpor
 			<th>Aircraft ID</th>
 			<th>Departing Airport</th>
 			<th>Arriving Airport</th>
-			<th>Flight Class</th>
-			<th>Flight Cost</th>
 			<th>Departure Date</th>
 			<th>Departure Time</th>
 			<th>Arrival Date</th>
@@ -105,8 +98,6 @@ where fo.airline_id = al.airline_id and fo.depart_from_airport_id like ap.airpor
 			out.print("<td>" + resultBrowseFlights.getString("aircraft_id") + "</td>");
 			out.print("<td>" + resultBrowseFlights.getString("depart_from") + "</td>");
 			out.print("<td>" + resultBrowseFlights.getString("arrive_at") + "</td>");
-			out.print("<td>" + resultBrowseFlights.getString("ticket_class") + "</td>");
-			out.print("<td>" + resultBrowseFlights.getString("flight_fare") + "</td>");
 			out.print("<td>" + resultBrowseFlights.getString("departure_date") + "</td>");
 			out.print("<td>" + resultBrowseFlights.getString("departure_time") + "</td>");
 			out.print("<td>" + resultBrowseFlights.getString("arrival_date") + "</td>");

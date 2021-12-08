@@ -106,14 +106,14 @@ INSERT INTO user VALUES("rep2", "2468", "represent", "ative", "representative");
 -- I commented out the administrator and rep because we already make them in the main Schema. 
 -- They're only here for easy reference.
 
-INSERT INTO flightOperated VALUES("UA", "0001", "Aircraft01", "EWR", "LAX", "first", 800, "2021-12-03", "10:00", "2021-12-03", "16:00", 0, 3);
-INSERT INTO flightOperated VALUES("UA", "0002", "Aircraft02", "LAX", "JFK", "business", 1000, "2021-12-04", "12:00", "2021-12-04", "18:00", 0, 3);
-INSERT INTO flightOperated VALUES("NK", "0003", "Aircraft04", "EWR", "JFK", "first", 900, "2021-12-05", "14:00", "2021-12-05", "18:00", 0, 3);
-INSERT INTO flightOperated VALUES("NK", "0004", "Aircraft06", "EWR", "MCO", "economy", 500, "2021-12-06", "16:00", "2021-12-06", "19:00", 0, 3);
-INSERT INTO flightOperated VALUES("DL", "0005", "Aircraft08", "DEL", "HKG", "economy", 700, "2021-12-20", "18:00", "2021-12-21", "1:00", 1, 2);
-INSERT INTO flightOperated VALUES("B6", "0006", "Aircraft10", "MCO", "SIN", "business", 1200, "2021-12-19", "16:00", "2021-12-20", "22:00", 1, 3);
-INSERT INTO flightOperated VALUES("F9", "0007", "Aircraft12", "SIN", "HKG", "first", 800, "2021-12-18", "12:00", "2021-12-18", "16:00", 1, 3);
-INSERT INTO flightOperated VALUES("SQ", "0008", "Aircraft14", "HKG", "JFK", "business", 1500, "2021-12-06", "18:00", "2021-12-07", "14:00", 1, 3);
+INSERT INTO flightOperated VALUES("UA", "0001", "Aircraft01", "EWR", "LAX", "2021-12-03", "10:00", "2021-12-03", "16:00", 0, 3);
+INSERT INTO flightOperated VALUES("UA", "0002", "Aircraft02", "LAX", "JFK", "2021-12-04", "12:00", "2021-12-04", "18:00", 0, 3);
+INSERT INTO flightOperated VALUES("NK", "0003", "Aircraft04", "EWR", "JFK", "2021-12-05", "14:00", "2021-12-05", "18:00", 0, 3);
+INSERT INTO flightOperated VALUES("NK", "0004", "Aircraft06", "EWR", "MCO", "2021-12-06", "16:00", "2021-12-06", "19:00", 0, 3);
+INSERT INTO flightOperated VALUES("DL", "0005", "Aircraft08", "DEL", "HKG", "2021-12-20", "18:00", "2021-12-21", "1:00", 1, 2);
+INSERT INTO flightOperated VALUES("B6", "0006", "Aircraft10", "MCO", "SIN", "2021-12-19", "16:00", "2021-12-19", "22:00", 1, 3);
+INSERT INTO flightOperated VALUES("F9", "0007", "Aircraft12", "SIN", "HKG", "2021-12-20", "12:00", "2021-12-20", "16:00", 1, 3);
+INSERT INTO flightOperated VALUES("SQ", "0008", "Aircraft14", "HKG", "JFK", "2021-12-20", "18:00", "2021-12-21", "14:00", 1, 3);
 
 -- ignore the below
 -- FRONTIER DOES NOT GO TO LAX FROM JFK EWR SIN OR HKG
@@ -132,32 +132,52 @@ INSERT INTO operatesOn VALUES("SQ", "0008", "Monday");
 
 INSERT INTO waitlist VALUES("UA", "0001", "Customer1", "1");
 INSERT INTO waitlist VALUES("UA", "0001", "Customer2", "2");
-
 INSERT INTO waitlist VALUES("NK", "0003", "Customer3", "1");
-
 INSERT INTO waitlist VALUES("B6", "0006", "Customer1", "1");
 INSERT INTO waitlist VALUES("B6", "0006", "Customer5", "2");
 INSERT INTO waitlist VALUES("B6", "0006", "Customer6", "3");
 INSERT INTO waitlist VALUES("B6", "0006", "Customer7", "4");
-
 INSERT INTO waitlist VALUES("SQ", "0008", "Customer4", "1");
 
 
-INSERT INTO ticket VALUES("001", "EWR", "LAX", "0", "0", "0", "6:00", "2021-11-20", "9:15", "2021-12-03", "10:00", "2021-12-03", "16:00", "150", "50");
-INSERT INTO ticket VALUES("002", "EWR", "LAX", "0", "0", "0", "6:00", "2021-11-20", "9:15", "2021-12-03", "10:00", "2021-12-03", "16:00", "150", "50");
-INSERT INTO ticket VALUES("003", "EWR", "LAX", "0", "0", "0", "6:00", "2021-11-20", "9:15", "2021-12-03", "10:00", "2021-12-03", "16:00", "150", "50");
-INSERT INTO ticket VALUES("004", "EWR", "LAX", "0", "0", "0", "6:00", "2021-11-20", "9:15", "2021-12-03", "10:00", "2021-12-03", "16:00", "150", "50");
-INSERT INTO ticket VALUES("005", "MCO", "SIN", "1", "1", "1", "26:00", "2021-12-20", "5:15", "2021-12-19", "16:00", "2021-12-20", "22:00", "500", "100");
+INSERT INTO ticket VALUES("001", "EWR", "LAX", "0", "0", "0", "6:00", "2021-12-01", "09:24", "2021-12-03", "10:00", "2021-12-03", "16:00", "15", "50");
+INSERT INTO parts VALUES("001", "UA", "0001", 1, 1000, "first");
 
+INSERT INTO ticket VALUES("002", "EWR", "LAX", "0", "0", "0", "6:00", NULL, NULL, "2021-12-03", "10:00", "2021-12-03", "16:00", "15", "50");
+INSERT INTO parts VALUES("002", "UA", "0001", 2, 800, "business");
 
+INSERT INTO ticket VALUES("003", "EWR", "LAX", "0", "0", "0", "6:00", NULL, NULL, "2021-12-03", "10:00", "2021-12-03", "16:00", "15", "50");
+INSERT INTO parts VALUES("003", "UA", "0001", 3, 700, "economy");
 
-INSERT INTO purchased VALUES("001", "Customer8", "0");
-INSERT INTO purchased VALUES("002", "Customer7", "0");
-INSERT INTO purchased VALUES("003", "Customer6", "0");
-INSERT INTO purchased VALUES("004", "Customer5", "0");
+INSERT INTO ticket VALUES("004", "MCO", "HKG", "0", "1", "1", "24:00", "2021-12-01", "09:25", "2021-12-19", "16:00", "2021-12-20", "16:00", "50", "100");
+INSERT INTO parts values("004", "B6", "0006", 1, 1200, "first");
+INSERT INTO parts values("004", "F9", "0007", 1, 800, "first");
+
+INSERT INTO ticket VALUES("005", "MCO", "HKG", "0", "1", "1", "24:00", "2021-12-01", "09:27", "2021-12-19", "16:00", "2021-12-20", "16:00", "50", "100");
+INSERT INTO parts values("005", "B6", "0006", 2, 700, "economy");
+INSERT INTO parts values("005", "F9", "0007", 2, 500, "economy");
+
+INSERT INTO ticket VALUES("006", "MCO", "JFK", "0", "1", "2", "46:00", "2021-12-01", "09:30", "2021-12-19", "16:00", "2021-12-21", "14:00", "45", "80");
+INSERT INTO parts values("006", "B6", "0006", 1, 700, "economy");
+INSERT INTO parts values("006", "F9", "0007", 1, 500, "economy");
+INSERT INTO parts values("006", "SQ", "0008", 1, 800, "economy");
+
+INSERT INTO ticket VALUES("007", "MCO", "JFK", "0", "1", "2", "46:00", NULL, NULL, "2021-12-19", "16:00", "2021-12-21", "14:00", "45", "80");
+INSERT INTO parts values("007", "B6", "0006", 2, 700, "business");
+INSERT INTO parts values("007", "F9", "0007", 2, 500, "business");
+INSERT INTO parts values("007", "SQ", "0008", 2, 800, "business");
+
+INSERT INTO ticket VALUES("008", "MCO", "JFK", "0", "1", "2", "46:00", NULL, NULL, "2021-12-19", "16:00", "2021-12-21", "14:00", "45", "80");
+INSERT INTO parts values("008", "B6", "0006", 1, 700, "business");
+INSERT INTO parts values("008", "F9", "0007", 1, 500, "business");
+INSERT INTO parts values("008", "SQ", "0008", 1, 800, "business");
+
+INSERT INTO purchased VALUES("001", "Customer4", "0");
+INSERT INTO purchased VALUES("004", "Customer4", "0");
 INSERT INTO purchased VALUES("005", "Customer4", "0");
+INSERT INTO purchased VALUES("006", "Customer4", "0");
 
-INSERT INTO parts VALUES("005", "B6", "0006", "20");
+
 
 INSERT INTO question VALUES("What day is flight 0008?", "2021-12-06", "Customer1");
 INSERT INTO question VALUES("What time is flight 0001?", "10:00", "Customer2");

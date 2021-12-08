@@ -1,0 +1,4 @@
+No stops
+SELECT t.ticket_id, a.name, aa.name, t.flight_duration, t.purchase_date, t.purchase_time, t.departure_date, t.departure_time, t.arrival_date, t.arrival_time, t.booking_fee, t.cancellation_fee
+FROM ticket t, purchased p, airport a, airport aa
+WHERE t.ticket_id = p.ticket_id and p.username = username and t.initial_departure_airport_id = a.airport_id and t.final_arrival_airport_id = aa.airport_id
