@@ -130,7 +130,17 @@ INSERT INTO operatesOn VALUES("F9", "0007", "Saturday");
 INSERT INTO operatesOn VALUES("SQ", "0008", "Monday");
 
 
+INSERT INTO waitlist VALUES("UA", "0001", "Customer1", "1");
+INSERT INTO waitlist VALUES("UA", "0001", "Customer2", "2");
 
+INSERT INTO waitlist VALUES("NK", "0003", "Customer3", "1");
+
+INSERT INTO waitlist VALUES("B6", "0006", "Customer1", "1");
+INSERT INTO waitlist VALUES("B6", "0006", "Customer5", "2");
+INSERT INTO waitlist VALUES("B6", "0006", "Customer6", "3");
+INSERT INTO waitlist VALUES("B6", "0006", "Customer7", "4");
+
+INSERT INTO waitlist VALUES("SQ", "0008", "Customer4", "1");
 
 
 
