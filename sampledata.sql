@@ -121,14 +121,13 @@ INSERT INTO flightOperated VALUES("SQ", "0008", "Aircraft14", "HKG", "JFK", "bus
 -- SQ DOES NOT GO FROM HKG SIN JFK OR LAX TO EWR
 -- we have associated for: EWR, LAX, HKG, SIN, JFK
 
-INSERT INTO operatesOn VALUES("UA", "Aircraft02", "Monday");
-INSERT INTO operatesOn VALUES("NK", "Aircraft04", "Tuesday");
-INSERT INTO operatesOn VALUES("NK", "Aircraft06", "Wednesday");
-INSERT INTO operatesOn VALUES("DL", "Aircraft08", "Thursday");
-INSERT INTO operatesOn VALUES("B6", "Aircraft10", "Friday");
-INSERT INTO operatesOn VALUES("F9", "Aircraft12", "Saturday");
-INSERT INTO operatesOn VALUES("SQ", "Aircraft14", "Sunday");
-
+INSERT INTO operatesOn VALUES("UA", "0001", "Monday");
+INSERT INTO operatesOn VALUES("NK", "0003", "Sunday");
+INSERT INTO operatesOn VALUES("NK", "0004", "Monday");
+INSERT INTO operatesOn VALUES("DL", "0005", "Monday");
+INSERT INTO operatesOn VALUES("B6", "0006", "Sunday");
+INSERT INTO operatesOn VALUES("F9", "0007", "Saturday");
+INSERT INTO operatesOn VALUES("SQ", "0008", "Monday");
 
 
 
