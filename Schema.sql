@@ -19,7 +19,8 @@ CREATE TABLE associated(airline_id varchar(10) NOT NULL,
                                      airport_id),
                         FOREIGN KEY (airline_id) REFERENCES airline(airline_id),
                         FOREIGN KEY (airport_id) REFERENCES airport(airport_id)
-                        ON DELETE CASCADE);
+                            ON UPDATE CASCADE
+                            ON DELETE CASCADE);
 
 
 CREATE TABLE aircraftOwned(airline_id       varchar(10) NOT NULL,
@@ -47,7 +48,6 @@ CREATE TABLE flightOperated (airline_id             varchar(10) NOT NULL,
                              aircraft_id            varchar(10) NOT NULL,
                              depart_from_airport_id varchar(10) NOT NULL,
                              arrive_at_airport_id   varchar(10) NOT NULL,
-                             ticket_class           ENUM('first', 'economy', 'business'),
                              flight_fare            int,
                              departure_date         DATE,
                              departure_time         TIME,
@@ -60,10 +60,13 @@ CREATE TABLE flightOperated (airline_id             varchar(10) NOT NULL,
                              FOREIGN KEY (airline_id,
                                           aircraft_id) REFERENCES aircraftOwned(airline_id,
                                                                                 aircraft_id)
-                             ON DELETE CASCADE,
+                             ON DELETE CASCADE
+                             ON UPDATE CASCADE,
                              FOREIGN KEY (depart_from_airport_id) REFERENCES airport(airport_id)
-                             ON DELETE CASCADE,
+                             ON DELETE CASCADE
+                             ON UPDATE CASCADE,
                              FOREIGN KEY (arrive_at_airport_id) REFERENCES airport(airport_id)
+                               ON UPDATE CASCADE
                               ON DELETE CASCADE);
 
 CREATE TABLE operatesOn(airline_id      varchar(10) NOT NULL,
@@ -74,7 +77,9 @@ CREATE TABLE operatesOn(airline_id      varchar(10) NOT NULL,
                                      operateDay),
                         FOREIGN KEY (airline_id,
                                      flight_number) REFERENCES flightOperated(airline_id,
-                                                                              flight_number));
+                                                                              flight_number)
+                            ON UPDATE CASCADE
+                            ON DELETE CASCADE);
 
 CREATE TABLE waitlist (airline_id             varchar(10) NOT NULL,
                        flight_number          varchar(10) NOT NULL,
@@ -85,7 +90,9 @@ CREATE TABLE waitlist (airline_id             varchar(10) NOT NULL,
                                     username),
                        FOREIGN KEY (airline_id,
                                     flight_number) REFERENCES flightOperated(airline_id,
-                                                                             flight_number),
+                                                                             flight_number)
+                       ON UPDATE CASCADE
+                       ON DELETE CASCADE,
                        FOREIGN KEY (username) REFERENCES user(username));
                        
 
@@ -105,8 +112,12 @@ CREATE TABLE ticket (ticket_id                      varchar(10) NOT NULL,
                      booking_fee                    int,
                      cancellation_fee               int,
                      PRIMARY KEY (ticket_id),
-                     FOREIGN KEY (initial_departure_airport_id) REFERENCES airport(airport_id),
-                     FOREIGN KEY (final_arrival_airport_id) REFERENCES airport(airport_id));
+                     FOREIGN KEY (initial_departure_airport_id) REFERENCES airport(airport_id)
+                        ON UPDATE CASCADE
+                        ON DELETE CASCADE,
+                     FOREIGN KEY (final_arrival_airport_id) REFERENCES airport(airport_id)
+                        ON UPDATE CASCADE
+                        ON DELETE CASCADE);
                      
 
 CREATE TABLE purchased (ticket_id                      varchar(10) NOT NULL,
@@ -121,15 +132,18 @@ CREATE TABLE parts (ticket_id                      varchar(10) NOT NULL,
                     airline_id                     varchar(10) NOT NULL,
                     flight_number                  varchar(10) NOT NULL,
                     seat_number                    int,
+                    ticket_class                   ENUM('first', 'economy', 'business'),
                     PRIMARY KEY(ticket_id,
                                 airline_id,
                                 flight_number),
                     FOREIGN KEY(ticket_id) REFERENCES ticket(ticket_id)
-                    ON DELETE CASCADE,
+                        ON UPDATE CASCADE
+                        ON DELETE CASCADE,
                     FOREIGN KEY(airline_id,
                                 flight_number) REFERENCES flightOperated(airline_id,
                                                                          flight_number)
-                   ON DELETE CASCADE);                                                                                                                                      
+                        ON UPDATE CASCADE
+                        ON DELETE CASCADE);                                                                                                                                      
                                                                        
 CREATE TABLE question(question        varchar(255) NOT NULL,
                       answer          varchar(255) NOT NULL,
