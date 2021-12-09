@@ -121,4 +121,5 @@ ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
 	
 	
 </body>
+<%con.close(); %>
 </html>

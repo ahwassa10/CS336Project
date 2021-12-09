@@ -24,6 +24,9 @@
 			<button type="submit" formaction="viewReservations.jsp">Manage your Reservations</button>
 			<br>
 			
+			<button type="submit" formaction="viewWaitlists.jsp">Manage your Waitlists</button>
+			<br>
+			
 			<button type="submit" formaction="qa.jsp">Manage Questions and Answers</button>
 			<br>
 			

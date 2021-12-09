@@ -129,17 +129,6 @@ INSERT INTO operatesOn VALUES("B6", "0006", "Sunday");
 INSERT INTO operatesOn VALUES("F9", "0007", "Saturday");
 INSERT INTO operatesOn VALUES("SQ", "0008", "Monday");
 
-
-INSERT INTO waitlist VALUES("UA", "0001", "Customer1", "1");
-INSERT INTO waitlist VALUES("UA", "0001", "Customer2", "2");
-INSERT INTO waitlist VALUES("NK", "0003", "Customer3", "1");
-INSERT INTO waitlist VALUES("B6", "0006", "Customer1", "1");
-INSERT INTO waitlist VALUES("B6", "0006", "Customer5", "2");
-INSERT INTO waitlist VALUES("B6", "0006", "Customer6", "3");
-INSERT INTO waitlist VALUES("B6", "0006", "Customer7", "4");
-INSERT INTO waitlist VALUES("SQ", "0008", "Customer4", "1");
-
-
 INSERT INTO ticket VALUES("001", "EWR", "LAX", "0", "0", "0", "6:00", "2021-12-01", "09:24", "2021-12-03", "10:00", "2021-12-03", "16:00", "15", "50");
 INSERT INTO parts VALUES("001", "UA", "0001", 1, 1000, "first");
 
