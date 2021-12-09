@@ -26,6 +26,7 @@
 		</style>
 	</head>
 	
+	<body>
 		<h1>Reservations for <%=session.getAttribute("username")%> </h1>
 		
 		<%
@@ -154,8 +155,11 @@
 			%>
 		</table>		
 	
-	
-	<body>
-
+		<hr>
+		<form method="get" action="userConsole.jsp">
+			<button type="submit">Go Back to the User Console</button>
+		</form>
+		
 	</body>
+<% con.close(); %>
 </html>

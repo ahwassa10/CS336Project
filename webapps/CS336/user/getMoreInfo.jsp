@@ -251,9 +251,13 @@ int bookingFee = 0;
 	
 	<h1>Total Cost of Flight: <%=totalCost%></h1>
 	<h1>Booking Fee: <%=bookingFee %></h1>
-		
+	
+	<hr>
+		<form method="get" action="viewReservations.jsp">
+			<button type="submit">Go Back to the View Reservations</button>
+		</form>
 		
 	
 </body>
-
+<% con.close(); %>
 </html>

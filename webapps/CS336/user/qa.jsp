@@ -91,8 +91,5 @@
 
 </body>
 
-<%
-	// Close Database Connection
-	con.close();
-%>
+<% con.close(); %>
 </html>
