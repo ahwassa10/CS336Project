@@ -28,6 +28,8 @@ Welcome to the Addition Page. Please enter the credentials for the
  	if(test1.equals("aircraft")){
  %>
 	<br>
+	You must use an already existing Airline.
+	<br>
 		<form method="post" action="addSuccess.jsp">
 		<table>
 		<tr>    
@@ -74,6 +76,8 @@ Welcome to the Addition Page. Please enter the credentials for the
  	} else {
  		//dealing with flight
  %>
+	<br>
+	You must use already existing Airlines, Airports, and Aircrafts.
 	<br>
 		<form method="post" action="addSuccess.jsp">
 		<table>
