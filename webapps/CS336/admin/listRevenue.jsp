@@ -33,7 +33,7 @@
             Statement stmt = con.createStatement();
 			String str;
 			if (revenueBy.equals("flight_number")) {
-				str = "SELECT flight_number,SUM((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket JOIN purchased USING(ticket_id) JOIN parts USING (ticket_id) GROUP BY airline_id,flight_number";
+				str = "SELECT flight_number,airline_id,SUM((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket JOIN purchased USING(ticket_id) JOIN parts USING (ticket_id) GROUP BY airline_id,flight_number";
 			}
 			else if (revenueBy.equals("airline_id")) {
 				str = "SELECT airline_id,SUM((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket JOIN purchased USING(ticket_id) JOIN (SELECT DISTINCT ticket_id,airline_id FROM parts) ticketairline USING(ticket_id) GROUP BY airline_id";
@@ -56,6 +56,11 @@
 			//print out column header
 			out.print(revenueBy);
 			out.print("</td>");
+			if (revenueBy.equals("flight_number")) {
+				out.print("<td>");
+				out.print("airline_id");
+				out.print("</td>");
+			}
 			//make a column
 			out.print("<td>");
 			out.print("revenue");
@@ -71,6 +76,11 @@
 				//Print out current flight_id/airline_id/username:
 				out.print(result.getString(1));
 				out.print("</td>");
+				if (revenueBy.equals("flight_number")) {
+					out.print("<td>");
+					out.print(result.getString("airline_id"));
+					out.print("</td>");
+				}
 				out.print("<td>");
 				//Print out current revenue:
 				out.print(result.getString("revenue"));

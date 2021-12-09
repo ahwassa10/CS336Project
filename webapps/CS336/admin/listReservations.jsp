@@ -20,9 +20,9 @@
 				String input = request.getParameter("input");
 				out.print(input);
 				String input2="";
-				if(input.equals("flight_number")) {
+				if (reservationsBy.equals("flight_number")) {
 					input2 = request.getParameter("input2");
-					out.print("airline_id "+input2);
+					out.print(" airline_id "+input2);
 				}
 			%>
 		</h1>

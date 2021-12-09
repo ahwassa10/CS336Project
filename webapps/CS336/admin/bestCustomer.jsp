@@ -20,18 +20,20 @@
 			Connection con = db.getConnection();
 
             Statement stmt = con.createStatement();
-			String str = "SELECT username,SUM((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket JOIN purchased USING(ticket_id) GROUP BY username ORDER BY revenue DESC";
+			String str = "SELECT username,first_name,last_name,SUM((NOT was_cancelled)*booking_fee+was_cancelled*cancellation_fee) revenue FROM ticket JOIN purchased USING(ticket_id) JOIN user USING(username) GROUP BY username ORDER BY revenue DESC";
 
 			ResultSet result = stmt.executeQuery(str);
 			if(result.next()) {
-				str = "SELECT * FROM user WHERE username=?";
-				PreparedStatement ps = con.prepareStatement(str);
-				ps.setString(1,result.getString("username"));
+			//	str = "SELECT * FROM user WHERE username=?";
+			//	PreparedStatement ps = con.prepareStatement(str);
+			//	out.println(result.getString("username"));
+			//	ps.setString(1,result.getString("username"));
 	
-				ResultSet result2 = stmt.executeQuery(str);
-				result2.next();
+			//	ResultSet result2 = stmt.executeQuery(str);
+			//	result2.next();
 	
-				out.print(result2.getString("first_name")+" "+result2.getString("last_name"));
+				out.print("Username: "+result.getString("username")+"<br>");
+				out.print(result.getString("first_name")+" "+result.getString("last_name"));
 			}
 			else {
 				out.print("no one :(");
