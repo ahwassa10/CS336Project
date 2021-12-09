@@ -93,16 +93,16 @@ Welcome to the Addition Page. Please enter the credentials for the
 		<td>Arriving At Airport</td><td><input type="text" name="arrive_at_airport_id"></td>
 		</tr>
 		<tr>
-		<td>Departure Date</td><td><input type="text" name="departure_date"></td>
+		<td>Departure Date (YYYY-MM-DD)</td><td><input type="text" name="departure_date"></td>
 		</tr>
 		<tr>
-		<td>Departure Time</td><td><input type="text" name="departure_time"></td>
+		<td>Departure Time (HH:MM)</td><td><input type="text" name="departure_time"></td>
 		</tr>
 		<tr>
-		<td>Arrival Date</td><td><input type="text" name="arrival_date"></td>
+		<td>Arrival Date (YYYY-MM-DD)</td><td><input type="text" name="arrival_date"></td>
 		</tr>
 		<tr>
-		<td>Arrival Time</td><td><input type="text" name="arrival_time"></td>
+		<td>Arrival Time (HH:MM)</td><td><input type="text" name="arrival_time"></td>
 		</tr>
 		<tr>
 		<td>Is International (Put 0 for No)</td><td><input type="text" name="is_international"></td>
