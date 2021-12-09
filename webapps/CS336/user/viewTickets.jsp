@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Browse Tickets</title>
+	<title>View Tickets</title>
 	<style>
 	table, th, td {
 		border: 1px solid black;

@@ -18,7 +18,7 @@
 			<button type="submit" formaction="Search.jsp">Search for a Flight</button>
 			<br>
 			
-			<button type="submit" formaction="browseTickets.jsp">View all Tickets and Make Reservations</button>
+			<button type="submit" formaction="viewTickets.jsp">View all Tickets and Make Reservations</button>
 			<br>
 			
 			<button type="submit" formaction="viewReservations.jsp">Manage your Reservations</button>
