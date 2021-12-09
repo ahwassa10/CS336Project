@@ -117,6 +117,7 @@
 				<th>Arrival Date/Time</th>
 				<th>Was Cancelled</th>
 				<th>Cancellation Fee</th>
+				<th>Cancel Reservation</th>
 			</tr>
 			
 			<%
@@ -149,6 +150,16 @@
 					}
 					
 					out.print("<td>" + resultUpcoming.getString("t.cancellation_fee") + "</td>");
+					
+					if (cancelled.equals("1")) {
+						out.print("<td><form method=\"get\" action=\"makeReservation.jsp\">" +
+					              "<button type=\"submit\" name=\"ticket_id\" value=\"" + resultUpcoming.getString("ticket_id") + "\">" +
+					              "Buy Ticket</button></form></td>");
+					} else {
+						out.print("<td><form method=\"get\" action=\"cancelReservation.jsp\">" +
+					              "<button type=\"submit\" name=\"ticket_id\" value=\"" + resultUpcoming.getString("ticket_id") + "\">" +
+					              "Cancel Ticket</button></form></td>");
+					}
 					
 					out.print("</tr>");
 				}
