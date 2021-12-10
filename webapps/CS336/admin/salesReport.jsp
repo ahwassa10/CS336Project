@@ -41,7 +41,7 @@
 			int sum = 0;
 			int count = 0;
 			while (result.next()) {
-				sum += result.getInt("booking_fee");
+				sum += result.getInt("revenue");
 				count++;
 			}
 			if (count==0) {
