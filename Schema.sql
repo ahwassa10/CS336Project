@@ -125,7 +125,8 @@ CREATE TABLE purchased (ticket_id                      varchar(10) NOT NULL,
                         was_cancelled                  BOOL,
                         PRIMARY KEY (ticket_id,
                                      username),
-                        FOREIGN KEY (ticket_id) REFERENCES ticket(ticket_id),
+                        FOREIGN KEY (ticket_id) REFERENCES ticket(ticket_id)
+                        ON UPDATE CASCADE,
                         FOREIGN KEY (username) REFERENCES user(username));
 
 CREATE TABLE parts (ticket_id                      varchar(10) NOT NULL,
