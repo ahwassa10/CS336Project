@@ -124,7 +124,7 @@ ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
 			int ret = updateFlights.executeUpdate(updateQuery);
 		}
 		
-		out.print(test1);
+		//out.print(test1);
 		/*
 		String purchase = "INSERT INTO purchased VALUES(?, ?, 0)";
 		//out.print(purchase);
@@ -143,7 +143,7 @@ ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
 		
 		String tick = request.getParameter("ticket_id");
 		String purchase = "INSERT INTO purchased VALUES(\"" + request.getParameter("ticket_id") + "\", \"" + request.getParameter("username") + "\", false)";
-		out.print("<p>" + purchase + "</p>");
+		//out.print("<p>" + purchase + "</p>");
 
 Statement purchaseTicket = con.createStatement();
 purchaseTicket.executeUpdate(purchase);
@@ -155,7 +155,7 @@ purchaseTicket.executeUpdate(purchase);
 		Statement setTimeDate = con.createStatement();
 		setTimeDate.executeUpdate(updateTicket);
 		
-		out.print("<h1>You Succesfully Purchased Ticket: " + test2);
+		out.print("<h1>You Succesfully Purchased Ticket: " + test2 + " for user:" + test1);
 		
 	}
 	
