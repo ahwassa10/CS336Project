@@ -14,11 +14,11 @@ Nikola
 Paul
 [x] Browse questions and answers
 [x] Search questions and answers by keywords
-[] make flight reservations/buy the ticket.
+[x] make flight reservations/buy the ticket.
 [] enter the waiting list if the flight is full
 [x] view all the past flight reservations with their details
 [x] view all the upcoming flights with their details
-[] cancel their flight reservations (if it is business or first class)
+[x] cancel their flight reservations (if it is business or first class)
 	[] send an alert to customers in the waiting list that there is an empty seat
 [x] post questions to the customer representative
 

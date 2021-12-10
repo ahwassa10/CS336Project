@@ -161,11 +161,20 @@ INSERT INTO parts values("008", "B6", "0006", 1, 700, "business");
 INSERT INTO parts values("008", "F9", "0007", 1, 500, "business");
 INSERT INTO parts values("008", "SQ", "0008", 1, 800, "business");
 
+INSERT INTO ticket VALUES("009", "MCO", "JFK", "0", "1", "2", "46:00", NULL, NULL, "2021-12-19", "16:00", "2021-12-21", "14:00", "45", "80");
+INSERT INTO parts values("009", "B6", "0006", 1, 700, "business");
+INSERT INTO parts values("009", "F9", "0007", 1, 500, "business");
+INSERT INTO parts values("009", "SQ", "0008", 1, 800, "business");
+
+INSERT INTO ticket VALUES("010", "MCO", "JFK", "0", "1", "2", "46:00", NULL, NULL, "2021-12-19", "16:00", "2021-12-21", "14:00", "45", "80");
+INSERT INTO parts values("010", "B6", "0006", 1, 700, "business");
+INSERT INTO parts values("010", "F9", "0007", 1, 500, "business");
+INSERT INTO parts values("010", "SQ", "0008", 1, 800, "business");
+
 INSERT INTO purchased VALUES("001", "Customer4", "0");
 INSERT INTO purchased VALUES("004", "Customer4", "0");
 INSERT INTO purchased VALUES("005", "Customer4", "0");
 INSERT INTO purchased VALUES("006", "Customer4", "0");
-
 
 
 INSERT INTO question VALUES("What day is flight 0008?", "2021-12-06", "Customer1");

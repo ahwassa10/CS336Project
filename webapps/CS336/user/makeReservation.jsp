@@ -67,6 +67,7 @@ ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
 			<th>Departing Airport</th>
 			<th>Arrival Airport</th>
 			<th>Flight Available</th>
+			<th>Join Waitlist</th>
 		</tr>
 		<%
 			while(resultGetFlights.next()) {
@@ -91,6 +92,29 @@ ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
 					out.print("<td id=\"st1\">Yes</td>");
 				}
 				
+				if (seats == 0 && (wasCancelled == false)) {
+					String checkWaitlist = "SELECT * FROM waitlist WHERE airline_id='" + resultGetFlights.getString("airline_id") +
+							               "' and flight_number='" + resultGetFlights.getString("flight_number") +
+							               "' and username='" + session.getAttribute("username") + "'";
+				    Statement queryCheckWaitlist = con.createStatement();
+				    ResultSet resultCheckWaitlist = queryCheckWaitlist.executeQuery(checkWaitlist);
+					
+				    if (resultCheckWaitlist.next() == false) {
+				    	out.print("<td>");
+				    	out.print("<form method=\"get\" action=\"addWaitlist.jsp\">");
+						out.print("<input type=\"hidden\" name=\"airline_id\" value=\"" + resultGetFlights.getString("airline_id") + "\">");
+						out.print("<input type=\"hidden\" name=\"flight_number\" value=\"" + resultGetFlights.getString("flight_number") + "\">");
+						out.print("<input type=\"hidden\" name=\"ticket_id\" value=\"" + request.getParameter("ticket_id") + "\">");
+						out.print("<button>Add to Waitlist</button>");
+						out.print("</form>");
+						out.print("</td>");
+				    } else {
+				    	out.print("<td>You are already on this waitlist</td>");
+				    }
+				} else {
+					out.print("<td>...</td>");
+				}
+				
 				out.print("</tr>");
 			}
 		%>
@@ -101,6 +125,7 @@ ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
 		out.print("<h1>Sorry, you already cancelled this ticket.</h1>");
 	} else if (canPurchase == false) {
 		out.print("<h1>Sorry, one or more flights are full. Please join the respective waitinglists</h1>");
+		
 	} else {
 		for(int i = 0; i < airlineIDs.size(); i++) {
 			String airlineID = airlineIDs.get(i);
