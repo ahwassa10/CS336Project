@@ -12,7 +12,8 @@
 	
 	String query = "SELECT q.question, q.answer, q.username " +
 				   "FROM question q " +
-				   "WHERE q.question like \"%" + request.getParameter("keyword") + "%\"";
+				   "WHERE q.question like \"%" + request.getParameter("keyword") + "%\" or " +
+				   "q.answer like \"%" + request.getParameter("keyword") + "%\"";
 	
 	Statement browseQuestions = con.createStatement();
 	ResultSet resultBrowseQuestions = browseQuestions.executeQuery(query);
