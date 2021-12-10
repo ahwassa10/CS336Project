@@ -44,7 +44,6 @@ int bookingFee = 0;
 				<th>Type</th>
 				<th>Number of Stops</th>
 				<th>Flight Duration</th>
-				<th>Purchase Date/Time</th>
 				<th>Departure Date/Time</th>
 				<th>Arrival Date/Time</th>
 				<th>Booking Fee</th>
@@ -81,8 +80,6 @@ int bookingFee = 0;
 				
 				<td><%=resultGeneralInfo.getString("t.flight_duration") %></td>
 				
-				<td><%=resultGeneralInfo.getString("t.purchase_date") + " " + resultGeneralInfo.getString("t.purchase_time") %></td>
-				
 				<td><%=resultGeneralInfo.getString("t.departure_date") + " " + resultGeneralInfo.getString("t.departure_time") %></td>
 				
 				<td><%=resultGeneralInfo.getString("t.arrival_date") + " " + resultGeneralInfo.getString("t.arrival_time") %></td>
@@ -112,6 +109,7 @@ int bookingFee = 0;
 				<th>Airline Info</th>
 				<th>Flight Number</th>
 				<th>Aircraft ID</th>
+				<th>Seats Available</th>
 				<th>Departure Airport</th>
 				<th>Arrival Airport</th>
 				<th>Departure Data/Time</th>
@@ -128,6 +126,8 @@ int bookingFee = 0;
 				<td><%=resultFirstStop.getString("fo.flight_number") %></td>
 				
 				<td><%=resultFirstStop.getString("fo.aircraft_id") %></td>
+				
+				<td><%=resultFirstStop.getString("fo.seats_available")%></td>
 				
 				<td>(<%=resultFirstStop.getString("a.airport_id")%>) <%=resultFirstStop.getString("a.name") %></td>
 				
@@ -169,6 +169,7 @@ int bookingFee = 0;
 			out.print("<th>Airline Info</th>");
 			out.print("<th>Flight Number</th>");
 			out.print("<th>Aircraft ID</th>");
+			out.print("<th>Seats Available</th>");
 			out.print("<th>Departure Airport</th>");
 			out.print("<th>Arrival Airport</th>");
 			out.print("<th>Departure Data/Time</th>");
@@ -183,6 +184,7 @@ int bookingFee = 0;
 			out.print("<td>(" + resultSecondStop.getString("ar.airline_id") + ") " + resultSecondStop.getString("ar.airline_name") + "</td>");
 			out.print("<td>" + resultSecondStop.getString("fo.flight_number") + "</td>");
 			out.print("<td>" + resultSecondStop.getString("fo.aircraft_id") + "</td>");
+			out.print("<td>" + resultSecondStop.getString("fo.seats_available") + "</td>");
 			out.print("<td>(" + resultSecondStop.getString("a.airport_id") + ") " + resultSecondStop.getString("a.name") + "</td>");
 			out.print("<td>(" + resultSecondStop.getString("aa.airport_id") + ") " + resultSecondStop.getString("aa.name") + "</td>");
 			out.print("<td>" + resultSecondStop.getString("fo.departure_date") + " " + resultSecondStop.getString("fo.departure_time") + "</td>");
@@ -219,6 +221,7 @@ int bookingFee = 0;
 			out.print("<th>Airline Info</th>");
 			out.print("<th>Flight Number</th>");
 			out.print("<th>Aircraft ID</th>");
+			out.print("<td>Seats Available</th>");
 			out.print("<th>Departure Airport</th>");
 			out.print("<th>Arrival Airport</th>");
 			out.print("<th>Departure Data/Time</th>");
@@ -233,6 +236,7 @@ int bookingFee = 0;
 			out.print("<td>(" + resultThirdStop.getString("ar.airline_id") + ") " + resultThirdStop.getString("ar.airline_name") + "</td>");
 			out.print("<td>" + resultThirdStop.getString("fo.flight_number") + "</td>");
 			out.print("<td>" + resultThirdStop.getString("fo.aircraft_id") + "</td>");
+			out.print("<td>" + resultThirdStop.getString("fo.seats_available") + "</td>");
 			out.print("<td>(" + resultThirdStop.getString("a.airport_id") + ") " + resultThirdStop.getString("a.name") + "</td>");
 			out.print("<td>(" + resultThirdStop.getString("aa.airport_id") + ") " + resultThirdStop.getString("aa.name") + "</td>");
 			out.print("<td>" + resultThirdStop.getString("fo.departure_date") + " " + resultThirdStop.getString("fo.departure_time") + "</td>");
@@ -251,12 +255,6 @@ int bookingFee = 0;
 	
 	<h1>Total Cost of Flight: <%=totalCost%></h1>
 	<h1>Booking Fee: <%=bookingFee %></h1>
-	
-	<hr>
-		<form method="get" action="viewReservations.jsp">
-			<button type="submit">Go Back to the View Reservations</button>
-		</form>
-		
 	
 </body>
 <% con.close(); %>

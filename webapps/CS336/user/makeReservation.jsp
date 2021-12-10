@@ -37,6 +37,18 @@ Statement getFlights = con.createStatement();
 ResultSet resultGetFlights = getFlights.executeQuery(query);
 
 boolean canPurchase = true;
+boolean wasCancelled = false;
+
+
+String cancelled = "SELECT * FROM purchased p WHERE p.ticket_id=\"" + request.getParameter("ticket_id") + "\" " +
+                   "and p.username=\"" + session.getAttribute("username") + "\" and p.was_cancelled=true";
+
+Statement queryCancelled = con.createStatement();
+ResultSet resultCancelled = queryCancelled.executeQuery(cancelled);
+while (resultCancelled.next()) {
+	wasCancelled = true;
+}
+
 ArrayList<String> airlineIDs = new ArrayList<String>();
 ArrayList<String> flightNumbers = new ArrayList<String>();
 ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
@@ -85,7 +97,9 @@ ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
 	</table>
 	
 	<%
-	if (canPurchase == false) {
+	if (wasCancelled == true) {
+		out.print("<h1>Sorry, you already cancelled this ticket.</h1>");
+	} else if (canPurchase == false) {
 		out.print("<h1>Sorry, one or more flights are full. Please join the respective waitinglists</h1>");
 	} else {
 		for(int i = 0; i < airlineIDs.size(); i++) {
@@ -115,9 +129,16 @@ ArrayList<Integer> seatsAvailable = new ArrayList<Integer>();
 		Statement setTimeDate = con.createStatement();
 		setTimeDate.executeUpdate(updateTicket);
 		
+		out.print("<h1>You Succesfully Purchased Ticket: " + request.getParameter("ticket_id"));
+		
 	}
 	
 	%>
+	
+	<hr>
+	<form method="get" action="viewTickets.jsp">
+		<button type="submit">Go Back to Viewing Tickets</button>
+	</form>
 	
 	
 </body>

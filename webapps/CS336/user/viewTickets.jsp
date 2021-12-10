@@ -36,8 +36,9 @@ ResultSet resultTickets = tickets.executeQuery(query);
 	<h1>Table of Tickets that can be Purchased</h1>
 	<table>
 		<tr>
-			<th>Purchase</th>
 			<th>Ticket ID</th>
+			<th>Purchase</th>
+			<th>Show All Ticket Information</th>
 			<th>Departure Airport</th>
 			<th>Arrival Airport</th>
 			<th>Total Fare</th>
@@ -54,11 +55,13 @@ ResultSet resultTickets = tickets.executeQuery(query);
 		while(resultTickets.next()) {
 			out.print("<tr>");
 			
+			out.print("<td>" + resultTickets.getString("t.ticket_id") + "</td>");
 			out.print("<td><form method=\"get\" action=\"makeReservation.jsp\">" +
 			          "<button type=\"submit\" name=\"ticket_id\" value=\"" + resultTickets.getString("t.ticket_id") + "\">" +
 			          "Buy Ticket</button></form></td>");
-			
-			out.print("<td>" + resultTickets.getString("t.ticket_id") + "</td>");
+			out.print("<td><form method=\"get\" action=\"getMoreInfo.jsp\">" +
+			          "<button type=\"submit\" name=\"ticket_id\" value=\"" + resultTickets.getString("t.ticket_id") + "\">" +
+			          "Show All Info</button></form></td>");
 			out.print("<td>(" + resultTickets.getString("a.airport_id") + ") " + resultTickets.getString("a.name") + "</td>");
 			out.print("<td>(" + resultTickets.getString("aa.airport_id") + ") " + resultTickets.getString("aa.name") + "</td>");
 			out.print("<td>" + resultTickets.getString("total_fare") + "</td>");

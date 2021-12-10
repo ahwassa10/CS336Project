@@ -144,7 +144,7 @@
 					
 					String cancelled = resultUpcoming.getString("p.was_cancelled");
 					if (cancelled.equals("1")) {
-						out.print("<td>Yes</td>");	
+						out.print("<td id=\"st2\">Yes</td>");	
 					} else {
 						out.print("<td id=\"st1\">No</td>");
 					}
@@ -152,9 +152,7 @@
 					out.print("<td>" + resultUpcoming.getString("t.cancellation_fee") + "</td>");
 					
 					if (cancelled.equals("1")) {
-						out.print("<td><form method=\"get\" action=\"makeReservation.jsp\">" +
-					              "<button type=\"submit\" name=\"ticket_id\" value=\"" + resultUpcoming.getString("ticket_id") + "\">" +
-					              "Buy Ticket</button></form></td>");
+						out.print("<td>You Cancelled This Ticket</td>");
 					} else {
 						out.print("<td><form method=\"get\" action=\"cancelReservation.jsp\">" +
 					              "<button type=\"submit\" name=\"ticket_id\" value=\"" + resultUpcoming.getString("ticket_id") + "\">" +
