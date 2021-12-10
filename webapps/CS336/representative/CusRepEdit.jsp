@@ -27,7 +27,7 @@ Welcome to the Editing Page. Below is a list of all
 <%
 	out.print(test1 + "s.");
 %>
-Please note that EVERY box must be filled. If you wish to not change a certain attribute, then please enter the already existing one.
+Please note that ALL the boxes must be filled. If you do not wish to change an attribute, please enter its current value. 
 <br>
 <%
 
