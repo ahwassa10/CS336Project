@@ -5,7 +5,10 @@ Aromal Suresh    as3235         Admin
 Nikola Daninski  ntd42          First part of user functionality
 
 GRADE EACH PART SEPARATELY
-When building the database, load schema.sql and sampledata.sql to get sample data.
+
+Infomation:
+1) When building the database, load schema.sql and sampledata.sql to get sample data.
+2) A ticket can be associated with a number of flightOperateds though parts.
 
 Admin Credentials
 username: administrator
