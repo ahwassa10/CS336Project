@@ -1,8 +1,8 @@
 # CS336Project
-Paul Kotys       pjk151         Second part of user functionality  
+Paul Kotys       pjk151         Second part of user functionality (QA/tickets/reservations/waitlist)
 Anthony Arca     aa2007         Customer Representative
 Aromal Suresh    as3235         Admin
-Nikola Daninski  ntd42          First part of user functionality
+Nikola Daninski  ntd42          First part of user functionality (searching/filtering)
 
 GRADE EACH PART SEPARATELY
 
