@@ -3,13 +3,13 @@
 User functionality
 Nikola
 
-[] let people search for flights between two airports
-	[] one way on a specific date
-	[] round-trip on specific dates
-	[] one way or roundtrip on flexible dates (+/- 3 days)
-[] browse the resulting flights
-[] sort flights by different criteria (price, take-off time, landing time, duration of flight)
-[] filter the list of flights by various criteria (price, number of stops, airline, take-off time, landing time)
+[x] let people search for flights between two airports
+	[x] one way on a specific date
+	[x] round-trip on specific dates
+	[x] one way or roundtrip on flexible dates (+/- 3 days)
+[x] browse the resulting flights
+[x] sort flights by different criteria (price, take-off time, landing time, duration of flight)
+[x] filter the list of flights by various criteria (price, number of stops, airline, take-off time, landing time)
 
 Paul Kotys pjk151
 [x] Browse questions and answers
