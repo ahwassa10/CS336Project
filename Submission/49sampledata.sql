@@ -115,12 +115,6 @@ INSERT INTO flightOperated VALUES("B6", "0006", "Aircraft10", "MCO", "SIN", "202
 INSERT INTO flightOperated VALUES("F9", "0007", "Aircraft12", "SIN", "HKG", "2021-12-20", "12:00", "2021-12-20", "16:00", 1, 3);
 INSERT INTO flightOperated VALUES("SQ", "0008", "Aircraft14", "HKG", "JFK", "2021-12-20", "18:00", "2021-12-21", "14:00", 1, 3);
 
--- ignore the below
--- FRONTIER DOES NOT GO TO LAX FROM JFK EWR SIN OR HKG
--- ETHIOPIA AL DOES NOT GO FROM JFK OR LAX TO EWR OR HKG OR SIN
--- SQ DOES NOT GO FROM HKG SIN JFK OR LAX TO EWR
--- we have associated for: EWR, LAX, HKG, SIN, JFK
-
 INSERT INTO operatesOn VALUES("UA", "0001", "Monday");
 INSERT INTO operatesOn VALUES("NK", "0003", "Sunday");
 INSERT INTO operatesOn VALUES("NK", "0004", "Monday");
@@ -183,7 +177,14 @@ INSERT INTO question VALUES("Where does flight 0002 land?", "JFK Airport", "Cust
 INSERT INTO question VALUES("What is EWR's address?", "", "Customer4");
 INSERT INTO question VALUES("Where does flight 0006 land?", "", "Customer5");
 
-
+INSERT INTO waitlist VALUES("UA", "0001", "Customer1", "001");
+INSERT INTO waitlist VALUES("UA", "0001", "Customer2", "001");
+INSERT INTO waitlist VALUES("NK", "0003", "Customer3", "001");
+INSERT INTO waitlist VALUES("B6", "0006", "Customer1", "001");
+INSERT INTO waitlist VALUES("B6", "0006", "Customer5", "001");
+INSERT INTO waitlist VALUES("B6", "0006", "Customer6", "001");
+INSERT INTO waitlist VALUES("B6", "0006", "Customer7", "001");
+INSERT INTO waitlist VALUES("SQ", "0008", "Customer4", "001");
 
 
 
