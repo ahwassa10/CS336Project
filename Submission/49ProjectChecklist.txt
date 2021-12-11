@@ -34,8 +34,7 @@ Aromal
 
 
 Customer Representative
-Anthony
-
+Anthony Arca aa2007
 [x] Make flight reservations on behalf of users
 [x] Edit flight reservations for a customer
 [x] Add, Edit, Delete information for aircrafts, airports, and flights
